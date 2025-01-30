@@ -40,26 +40,26 @@ const Home = () => {
   return (
     <div className="home">
       {/* Hero Section */}
-      <section className="hero">
-        <div className="hero1">
+      <div className="hero-container">
+        <div className="category-menu">
           <ul>
-           <li>Electronics</li>
-           <li>Computer Gadget</li>
-           <li>Fashion</li>
-           <li>Body Lotion</li>
-           <li>Sports</li>
-           <li>Woman Clothes</li>
-           <li>Shoes</li>
-           <li>Watches</li>
-         </ul>
+            <li>Electronics</li>
+            <li>Computer Gadget</li>
+            <li>Fashion</li>
+            <li>Body Lotion</li>
+            <li>Sports</li>
+            <li>Woman Clothes</li>
+            <li>Shoes</li>
+            <li>Watches</li>
+          </ul>
         </div>
         <div className="hero-content">
-         <h1>Explore our latest and greatest electronics</h1>
+          <h1>Explore our latest and<br />greatest electronics</h1>
           <Link to="/shop">
-           <button className="shop-now">SHOP NOW</button>
+            <button className="shop-now">SHOP NOW</button>
           </Link>
         </div>
-      </section>
+      </div>
 
       {/* Popular Categories */}
       <section className="popular-categories">
