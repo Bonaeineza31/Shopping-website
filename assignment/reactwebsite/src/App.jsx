@@ -6,6 +6,7 @@ import Shop from './components/Shop'
 import Contact from './components/Contact.jsx'
 import Account from './components/Account'
 import Vendors from './components/Vendors'
+import Blog from './components/Blog'
 import './App.css'
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/Shop" element={<Shop />} />
         <Route path="/Account" element={<Account />} />
         <Route path="/Vendors" element={<Vendors />} />
+        <Route path="/Blog" element={<Blog />} />
       </Route>
     </Routes>
   );
