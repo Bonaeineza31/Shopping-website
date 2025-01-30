@@ -18,11 +18,11 @@ import '../styles/home.css';
 const Home = () => {
   const popularCategories = [
     { name: 'Body Lotion', image: Bodylotion, link: '/Shop' },
-    { name: 'Sports', image: Sport, link: '/category/sports' },
-    { name: 'Computer Gadget', image: ComputerGadget, link: '/category/computer' },
-    { name: 'Electronics', image: Electronics, link: '/category/electronics' },
-    { name: 'Watch', image: Watch, link: '/category/watch' },
-    { name: 'Woman Clothes', image: WomanClothes, link: '/category/clothes' }
+    { name: 'Sports', image: Sport, link: '/Shop' },
+    { name: 'Computer Gadget', image: ComputerGadget, link: '/Shop' },
+    { name: 'Electronics', image: Electronics, link: '/Shop' },
+    { name: 'Watch', image: Watch, link: '/Shop'},
+    { name: 'Woman Clothes', image: WomanClothes, link: '/Shop' }
   ];
 
   const newProducts = [
@@ -92,7 +92,9 @@ const Home = () => {
               </div>
             ))}
           </div>
-          <button className="show-more">SHOP NOW</button>
+          <Link to="/Shop">
+            <button className="shop-more">SHOP NOW</button>
+          </Link>
         </div>
       </section>
 
@@ -109,7 +111,9 @@ const Home = () => {
               </div>
             ))}
           </div>
-          <button className="view-all">VIEW ALL VENDORS</button>
+          <Link to="/shop">
+            <button className="view-all">VIEW ALL VENDORS</button>
+          </Link>
         </div>
       </section>
 
@@ -119,7 +123,8 @@ const Home = () => {
           <h2>Why People Choose Us</h2>
           <div className="features-grid">
             <div className="feature">
-              <div className="icon">↺</div>
+              <div className="icon">⟶
+⟵</div>
               <h3>Easy Returns</h3>
               <p>Our return policy is simple and that's why customers love our shop</p>
             </div>
