@@ -1,0 +1,185 @@
+/* Reset any potential conflicting styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Make footer styles more specific */
+footer.footer {
+  background: #18181b;
+  color: white;
+  padding: 4rem 6rem;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+footer.footer .footer-sections {
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Left Section with higher specificity */
+footer.footer .footer-section-left {
+  flex: 1;
+  max-width: 65%;
+}
+
+footer.footer .newsletter {
+  margin-bottom: 3rem;
+}
+
+footer.footer .newsletter h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+footer.footer .newsletter p {
+  color: #9ca3af;
+  margin-bottom: 1.5rem;
+  max-width: 400px;
+}
+
+footer.footer .subscribe-form {
+  display: flex;
+  gap: 1rem;
+  max-width: 400px;
+}
+
+footer.footer .subscribe-form input {
+  flex: 1;
+  padding: 0.75rem 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #4b5563;
+  color: white;
+  outline: none;
+}
+
+footer.footer .subscribe-form button {
+  padding: 0.5rem 1.5rem;
+  background: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+/* Footer Links */
+footer.footer .footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+footer.footer .link-section h4 {
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+footer.footer .link-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer.footer .link-section ul li {
+  margin-bottom: 0.75rem;
+}
+
+footer.footer .link-section ul li a {
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer.footer .link-section ul li a:hover {
+  color: white;
+}
+
+/* Right Section */
+footer.footer .footer-section-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 250px;
+}
+
+footer.footer .contact-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+footer.footer .contact-info p {
+  color: #9ca3af;
+  margin-bottom: 0.5rem;
+}
+
+footer.footer .contact-info .email {
+  color: #3b82f6;
+  margin-bottom: 1.5rem;
+}
+
+footer.footer .social-icons {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1.25rem;
+}
+
+footer.footer .social-icons svg {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+footer.footer .social-icons svg:hover {
+  color: #3b82f6;
+}
+
+footer.footer .accept-section h4 {
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+footer.footer .payment-methods img {
+  max-width: 200px;
+}
+
+/* Override any potential conflicting styles */
+footer.footer * {
+  box-sizing: border-box;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  footer.footer .footer-sections {
+    flex-direction: column;
+  }
+
+  footer.footer .footer-section-left {
+    max-width: 100%;
+  }
+
+  footer.footer .footer-section-right {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  footer.footer {
+    padding: 2rem;
+  }
+
+  footer.footer .footer-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  footer.footer .footer-links {
+    grid-template-columns: 1fr;
+  }
+}
