@@ -113,7 +113,7 @@ const Home = () => {
           </div>
           <Link to="/shop">
             <button className="view-all">VIEW ALL VENDORS</button>
-          </Link>
+          </Link> 
         </div>
       </section>
 
