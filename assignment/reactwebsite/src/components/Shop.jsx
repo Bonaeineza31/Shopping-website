@@ -10,6 +10,7 @@ import recorder from '../images/Screenshot 2025-01-30 141532.png'
 import watch from '../images/Screenshot 2025-01-30 141419.png'
 import headsetplus from '../images/Screenshot 2025-01-30 141410.png'
 
+
 const Shop = () => {
   const [priceRange, setPriceRange] = useState([0, 100]);
   

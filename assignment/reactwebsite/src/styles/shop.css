@@ -8,11 +8,11 @@
   /* Hero Section */
   .shop-hero {
     height: 200px;
-    background: linear-gradient(to right, #f3f4f6, #e5e7eb);
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 2rem;
+    background-image: url('/src/images/Screenshot 2025-01-31 082800.png');
   }
   
   .shop-hero h1 {
