@@ -34,8 +34,9 @@ const Home = () => {
   const vendors = [
     { name: "Santa Monica's Fashion Store", location: "New York, NY", image: monica },
     { name: "Josh Doe's Store", location: "New York, NY", image: doe },
-    { name: "Digital Good's Store", location: "New York, NY", image: digital }
+    { name: "Digital Good's Store", location: "New York, NY", image: digital }, 
   ];
+
 
   return (
     <div className="home">

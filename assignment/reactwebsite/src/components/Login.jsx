@@ -22,9 +22,9 @@ const Login = () => {
         <input
           type="text"
           placeholder="Enter Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
+          // value={username}
+          // onChange={(e) => setUsername(e.target.value)}
+          // required
         />
         <button type="submit">Login</button>
       </form>

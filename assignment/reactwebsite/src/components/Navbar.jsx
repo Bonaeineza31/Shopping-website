@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import '../styles/navbar.css';
 
 const Navbar = () => {
+  const [showAccount, setShowAccount] = useState(false);
   const [showCategories, setShowCategories] = useState(false);
 
   const categories = [
@@ -21,11 +22,11 @@ const Navbar = () => {
     <header className="header">
       <div className="top-navbar">
         <div className="container">
-          <Link to="/" className="logo">Botiga</Link>
-          
+          <Link to="/Home" className="logo">Botiga</Link>
+
           <div className="search-bar">
             <div className="category-dropdown">
-              <button 
+              <button
                 className="dropdown-toggle"
                 onClick={() => setShowCategories(!showCategories)}
               >
@@ -41,7 +42,7 @@ const Navbar = () => {
             </div>
             <div className="search-input">
               <input type="text" placeholder="Search products..." />
-            <button className="search-button" >
+              <button className="search-button">
                 <Search size={20} />
               </button>
             </div>
@@ -75,11 +76,13 @@ const Navbar = () => {
             <li><Link to="/blog">Blog</Link></li>
             <li><Link to="/Contact">Contact</Link></li>
           </ul>
-          <div className="contact-number">
-            📞 800-123-4567
-          </div>
+          <div className="contact-number">📞 800-123-4567</div>
         </div>
       </nav>
+
+      {showAccount && (
+        <Account onClose={() => setShowAccount(false)} />
+      )}
     </header>
   );
 };

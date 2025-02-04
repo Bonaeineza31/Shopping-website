@@ -41,7 +41,6 @@ const Shop = () => {
     <div className="shop-container">
       {/* Hero Section */}
       <div className="shop-hero">
-        <h1>Shop</h1>
       </div>
 
       <div className="shop-content">

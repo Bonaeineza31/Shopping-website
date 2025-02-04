@@ -10,8 +10,10 @@
     height: 200px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 2rem;
+    justify-content: fill;
+    margin-bottom: 4rem;
+    margin-left: -400px;
+    margin-right: -400px;
     background-image: url('/src/images/Screenshot 2025-01-31 082800.png');
   }
   
