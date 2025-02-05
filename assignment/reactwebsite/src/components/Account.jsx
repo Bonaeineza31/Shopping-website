@@ -17,16 +17,15 @@ const Account = ({ onClose }) => {
     e.preventDefault();
     if (loginData.username.trim()) {
       localStorage.setItem("loggedInUser", loginData.username);
-      onClose("/Home"); 
-      navigate("/Home");
+      onClose();
+      navigate("/");
       window.location.reload();
     }
   };
-
   const handleRegisterSubmit = (e) => {
     e.preventDefault();
     console.log('Register submitted:', registerData);
-    onClose(); // Close modal after successful registration
+    onClose();
   };
 
   const handleLoginChange = (e) => {
@@ -46,8 +45,8 @@ const Account = ({ onClose }) => {
   };
 
   const handleCloseModal = () => {
-    onClose('./components/Home.jsx');
-    navigate('./components/Home.jsx');
+    onClose();
+    navigate('/');
   };
   
 

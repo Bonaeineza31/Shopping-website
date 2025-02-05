@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Search, User, Heart, ShoppingCart, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import '../styles/navbar.css';
+import Account from './Account';
 
 const Navbar = () => {
   const [showAccount, setShowAccount] = useState(false);
@@ -49,9 +50,9 @@ const Navbar = () => {
           </div>
 
           <div className="user-actions">
-            <Link to="/account" className="icon-button">
-              <User size={20} />
-            </Link>
+          <button onClick={() => setShowAccount(true)} className="icon-button">
+            <User size={20} />
+          </button>
             <Link to="/wishlist" className="icon-button">
               <Heart size={20} />
               <span className="badge">0</span>
