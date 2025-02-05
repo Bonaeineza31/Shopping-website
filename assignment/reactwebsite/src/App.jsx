@@ -8,6 +8,8 @@ import Account from './components/Account'
 import Vendors from './components/Vendors'
 import Blog from './components/Blog'
 import './App.css'
+import Homepage from './components/Homepage.jsx'
+import SinglePage from './components/SinglePage.jsx'
 
 function App() {
   return (
@@ -18,8 +20,10 @@ function App() {
         <Route path="/Shop" element={<Shop />} />
         <Route path="/Account" element={<Account />} />
         <Route path="/Vendors" element={<Vendors />} />
-        <Route path="/Blog" element={<Blog />} />
-      </Route>
+        <Route path="/Blog" element={<Blog />} />   
+        <Route path="/view"element={<Homepage/>} /> 
+        <Route path="singlecard/:id" element={<SinglePage/>} />
+       </Route>
     </Routes>
   );
 }

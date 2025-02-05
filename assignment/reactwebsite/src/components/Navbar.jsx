@@ -24,6 +24,7 @@ const Navbar = () => {
       <div className="top-navbar">
         <div className="container">
           <Link to="/Home" className="logo">Botiga</Link>
+          <Link to ='/view'><button>view</button></Link>
 
           <div className="search-bar">
             <div className="category-dropdown">
