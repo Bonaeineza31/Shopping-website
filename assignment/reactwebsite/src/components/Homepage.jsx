@@ -6,7 +6,7 @@ import Electronics from '../images/Screenshot 2025-01-28 153927.png';
 import Watch from '../images/Screenshot 2025-01-28 153934.png';
 import { useNavigate } from 'react-router-dom';
 
-export const data = [
+export const productlist = [
     {id:1, image:ComputerGadget, cardTitle:"Computer Gadget" },
     {id:2,image:Electronics, cardTitle:"Electronics"},
     {id:3, image:Watch, cardTitle:"Watch"},
