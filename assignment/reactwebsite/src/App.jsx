@@ -22,7 +22,8 @@ function App() {
         <Route path="/Vendors" element={<Vendors />} />
         <Route path="/Blog" element={<Blog />} />   
         <Route path="/view"element={<Homepage/>} /> 
-        <Route path="singlecard/:id" element={<SinglePage/>} />
+        <Route path="product/:id" element={<SinglePage/>} />
+        <Route path="category/:id" element={<SinglePage/>} />
        </Route>
     </Routes>
   );

@@ -1,30 +1,33 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Bodylotion from '../images/Screenshot 2025-01-28 153903.png';
 import Sport from '../images/Screenshot 2025-01-28 153912.png';
 import ComputerGadget from '../images/Screenshot 2025-01-28 153920.png';
 import Electronics from '../images/Screenshot 2025-01-28 153927.png';
 import Watch from '../images/Screenshot 2025-01-28 153934.png';
 import WomanClothes from '../images/Screenshot 2025-01-28 155118.png';
-import instapic from '../images/Screenshot 2025-01-28 161648.png'
-import smart from '../images/Screenshot 2025-01-28 162450.png'
-import alexa from '../images/Screenshot 2025-01-28 162458.png'
-import headset from '../images/Screenshot 2025-01-28 162506.png'
-import monica from '../images/Screenshot 2025-01-28 163110.png'
-import doe from '../images/Screenshot 2025-01-28 163130.png'
-import digital from '../images/Screenshot 2025-01-28 163143.png'
+import instapic from '../images/Screenshot 2025-01-28 161648.png';
+import smart from '../images/Screenshot 2025-01-28 162450.png';
+import alexa from '../images/Screenshot 2025-01-28 162458.png';
+import headset from '../images/Screenshot 2025-01-28 162506.png';
+import monica from '../images/Screenshot 2025-01-28 163110.png';
+import doe from '../images/Screenshot 2025-01-28 163130.png';
+import digital from '../images/Screenshot 2025-01-28 163143.png';
 import '../styles/home.css';
 
-const Home = () => {
-  const popularCategories = [
-    { name: 'Body Lotion', image: Bodylotion, link: '/Shop' },
-    { name: 'Sports', image: Sport, link: '/Shop' },
-    { name: 'Computer Gadget', image: ComputerGadget, link: '/Shop' },
-    { name: 'Electronics', image: Electronics, link: '/Shop' },
-    { name: 'Watch', image: Watch, link: '/Shop'},
-    { name: 'Woman Clothes', image: WomanClothes, link: '/Shop' }
-  ];
+// Move this outside the component so it doesn't get recreated on every render
+export const popularCategories = [
+  { id: 1, name: 'Body Lotion', image: Bodylotion, link: '/category/1' },
+  { id: 2, name: 'Sports', image: Sport, link: '/category/2' },
+  { id: 3, name: 'Computer Gadget', image: ComputerGadget, link: '/category/3' },
+  { id: 4, name: 'Electronics', image: Electronics, link: '/category/4' },
+  { id: 5, name: 'Watch', image: Watch, link: '/category/5' },
+  { id: 6, name: 'Woman Clothes', image: WomanClothes, link: '/category/6' }
+];
 
+const Home = () => {
+  // These arrays could also be moved outside the component if they don't change
   const newProducts = [
     { name: 'All-Pro Smart', price: { from: 18.00, to: 35.00 }, image: smart },
     { name: 'Amazon Alexa', price: { from: 45.00, to: 65.00 }, image: alexa },
@@ -34,9 +37,14 @@ const Home = () => {
   const vendors = [
     { name: "Santa Monica's Fashion Store", location: "New York, NY", image: monica },
     { name: "Josh Doe's Store", location: "New York, NY", image: doe },
-    { name: "Digital Good's Store", location: "New York, NY", image: digital }, 
+    { name: "Digital Good's Store", location: "New York, NY", image: digital },
   ];
 
+  const navigate = useNavigate();
+  
+  const handleNavigate = (id) => {
+    navigate(`/singlecard/${id}`);
+  };
 
   return (
     <div className="home">
@@ -68,7 +76,11 @@ const Home = () => {
           <h2>Popular Categories</h2>
           <div className="categories-grid">
             {popularCategories.map((category) => (
-              <Link to={category.link} key={category.name} className="category-card">
+              <Link
+                to={`/category/${category.id}`}
+                key={category.id}
+                className="category-card"
+              >
                 <img src={category.image} alt={category.name} />
                 <h3>{category.name}</h3>
               </Link>
