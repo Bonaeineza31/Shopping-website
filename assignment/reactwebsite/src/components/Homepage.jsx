@@ -17,7 +17,7 @@ function Homepage() {
 
   const handleNavigate = (id) => {
 
-    navigate(`/product/${id}`);
+    navigate(`/product2/${id}`);
   };
 
   return (

@@ -24,7 +24,8 @@ function App() {
         <Route path="/Blog" element={<Blog />} />   
         <Route path="/ProductCard" element={<ProductCard />} />  
         <Route path="/view"element={<Homepage/>} /> 
-        <Route path="product/:id" element={<SinglePage/>} />
+        <Route path="product2/:id" element={<SinglePage/>} />
+        <Route path="/product/:id" element={<ProductCard />} />
         <Route path="category/:id" element={<SinglePage/>} />
        </Route>
     </Routes>

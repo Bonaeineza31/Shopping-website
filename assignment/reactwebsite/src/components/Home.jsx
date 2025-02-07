@@ -32,19 +32,13 @@ export const popularCategories = [
 ];
 
 export const newProducts = [
-  { name: 'All-Pro Smart', price: { from: 18.00, to: 35.00 }, image: smart },
-  { name: 'Amazon Alexa', price: { from: 45.00, to: 65.00 }, image: alexa },
-  { name: 'Headset Gamer', price: { from: 32.00, to: 45.00 }, image: headset }
+  {id:7,  name: 'All-Pro Smart', price: { from: 18.00, to: 35.00 }, image: smart },
+  { id:8, name: 'Amazon Alexa', price: { from: 45.00, to: 65.00 }, image: alexa },
+  {id:9, name: 'Headset Gamer', price: { from: 32.00, to: 45.00 }, image: headset }
 ];
 
 const Home = () => {
   // These arrays could also be moved outside the component if they don't change
-  const newProducts = [
-    { name: 'All-Pro Smart', price: { from: 18.00, to: 35.00 }, image: smart },
-    { name: 'Amazon Alexa', price: { from: 45.00, to: 65.00 }, image: alexa },
-    { name: 'Headset Gamer', price: { from: 32.00, to: 45.00 }, image: headset }
-  ];
-
   const vendors = [
     { name: "Santa Monica's Fashion Store", location: "New York, NY", image: monica },
     { name: "Josh Doe's Store", location: "New York, NY", image: doe },
