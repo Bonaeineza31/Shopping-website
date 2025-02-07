@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../styles/account.css'
 
 const Account = ({ onClose }) => {
   const [isLoginView, setIsLoginView] = useState(true);
