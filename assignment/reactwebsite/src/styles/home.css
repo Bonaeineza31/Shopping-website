@@ -224,23 +224,41 @@
 }
 
 /* Instagram Feed */
+/* Instagram Feed Styles */
 .instagram-feed {
-  padding: 4rem 0;
+  padding: 0.5rem; /* Removed horizontal padding */
   width: 100%;
+  overflow: hidden; /* Prevent any potential horizontal scroll */
+}
+
+.instagram-feed h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
 }
 
 .instagram-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0; /* Remove any default padding */
+  margin: 0; /* Remove any default margin */
+}
+
+.instagram-item {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* Create square aspect ratio */
 }
 
 .instagram-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
-  aspect-ratio: 1;
 }
 
 /* Responsive adjustments */

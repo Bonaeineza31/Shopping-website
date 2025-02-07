@@ -23,7 +23,7 @@ const Navbar = () => {
     <header className="header">
       <div className="top-navbar">
         <div className="container">
-          <Link to="/Home" className="logo">Botiga</Link>
+          <Link to="/" className="logo">Botiga</Link>
           <Link to ='/view'><button>view</button></Link>
 
           <div className="search-bar">

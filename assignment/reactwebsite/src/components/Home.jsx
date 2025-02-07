@@ -7,16 +7,20 @@ import ComputerGadget from '../images/Screenshot 2025-01-28 153920.png';
 import Electronics from '../images/Screenshot 2025-01-28 153927.png';
 import Watch from '../images/Screenshot 2025-01-28 153934.png';
 import WomanClothes from '../images/Screenshot 2025-01-28 155118.png';
-import instapic from '../images/Screenshot 2025-01-28 161648.png';
 import smart from '../images/Screenshot 2025-01-28 162450.png';
 import alexa from '../images/Screenshot 2025-01-28 162458.png';
 import headset from '../images/Screenshot 2025-01-28 162506.png';
 import monica from '../images/Screenshot 2025-01-28 163110.png';
 import doe from '../images/Screenshot 2025-01-28 163130.png';
 import digital from '../images/Screenshot 2025-01-28 163143.png';
+import instapic1 from '../images/Screenshot 2025-02-06 081452.png';
+import instapic2 from '../images/Screenshot 2025-02-06 081503.png'
+import instapic3 from '../images/Screenshot 2025-01-28 161648.png';
+import instapic4 from '../images/Screenshot 2025-02-06 081512.png'
+import instapic5 from '../images/Screenshot 2025-02-06 081531.png'
+import instapic6 from '../images/Screenshot 2025-02-06 081550.png'
 import '../styles/home.css';
 
-// Move this outside the component so it doesn't get recreated on every render
 export const popularCategories = [
   { id: 1, name: 'Body Lotion', image: Bodylotion, link: '/category/1' },
   { id: 2, name: 'Sports', image: Sport, link: '/category/2' },
@@ -38,6 +42,14 @@ const Home = () => {
     { name: "Santa Monica's Fashion Store", location: "New York, NY", image: monica },
     { name: "Josh Doe's Store", location: "New York, NY", image: doe },
     { name: "Digital Good's Store", location: "New York, NY", image: digital },
+  ];
+  const instagramPosts = [
+    { id: 1, image: instapic1, alt: 'Fashion post 1' },
+    { id: 2, image: instapic2, alt: 'Fashion post 2' },
+    { id: 3, image: instapic3, alt: 'Fashion post 3' },
+    { id: 4, image: instapic4, alt: 'Fashion post 4' },
+    { id: 5, image: instapic5, alt: 'Fashion post 5' },
+    { id: 6, image: instapic6, alt: 'Fashion post 6' }
   ];
 
   const navigate = useNavigate();
@@ -156,15 +168,15 @@ const Home = () => {
       </section>
       {/* Instagram Feed */}
       <div className="instagram-feed">
-        <h3>Follow us on Instagram</h3>
-        <div className="instagram-grid">
-          {[Watch, 2, 3, 4, 5, 6].map((item) => (
-            <div key={item} className="instagram-item">
-              <img src={instapic} alt={`Instagram post ${item}`} />
-            </div>
-          ))}
-        </div>
+      <h3>Follow us on @instagram</h3>
+      <div className="instagram-grid">
+        {instagramPosts.map((post) => (
+          <div key={post.id} className="instagram-item">
+            <img src={post.image} alt={post.alt} />
+          </div>
+        ))}
       </div>
+    </div>
     </div>
   );
 };
