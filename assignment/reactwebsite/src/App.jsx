@@ -10,6 +10,7 @@ import Blog from './components/Blog'
 import './App.css'
 import Homepage from './components/Homepage.jsx'
 import SinglePage from './components/SinglePage.jsx'
+import ProductCard from './components/ProductCard.jsx'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/Account" element={<Account />} />
         <Route path="/Vendors" element={<Vendors />} />
         <Route path="/Blog" element={<Blog />} />   
+        <Route path="/ProductCard" element={<ProductCard />} />  
         <Route path="/view"element={<Homepage/>} /> 
         <Route path="product/:id" element={<SinglePage/>} />
         <Route path="category/:id" element={<SinglePage/>} />

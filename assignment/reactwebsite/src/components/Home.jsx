@@ -19,6 +19,7 @@ import instapic3 from '../images/Screenshot 2025-01-28 161648.png';
 import instapic4 from '../images/Screenshot 2025-02-06 081512.png'
 import instapic5 from '../images/Screenshot 2025-02-06 081531.png'
 import instapic6 from '../images/Screenshot 2025-02-06 081550.png'
+import ProductCard from '../components/ProductCard.jsx';
 import '../styles/home.css';
 
 export const popularCategories = [
@@ -28,6 +29,12 @@ export const popularCategories = [
   { id: 4, name: 'Electronics', image: Electronics, link: '/category/4' },
   { id: 5, name: 'Watch', image: Watch, link: '/category/5' },
   { id: 6, name: 'Woman Clothes', image: WomanClothes, link: '/category/6' }
+];
+
+export const newProducts = [
+  { name: 'All-Pro Smart', price: { from: 18.00, to: 35.00 }, image: smart },
+  { name: 'Amazon Alexa', price: { from: 45.00, to: 65.00 }, image: alexa },
+  { name: 'Headset Gamer', price: { from: 32.00, to: 45.00 }, image: headset }
 ];
 
 const Home = () => {
@@ -102,26 +109,23 @@ const Home = () => {
       </section>
 
       {/* New Arrival Products */}
-      <section className="new-arrivals">
-        <div className="container">
-          <h2>New Arrival Products</h2>
-          <div className="products-grid">
-            {newProducts.map((product) => (
-              <div key={product.name} className="product-card">
-                <img src={product.image} alt={product.name} />
-                <h3>{product.name}</h3>
-                <p className="price">
-                  ${product.price.from.toFixed(2)} - ${product.price.to.toFixed(2)}
-                </p>
-                <div className="rating">★★★★☆</div>
-              </div>
-            ))}
-          </div>
-          <Link to="/Shop">
-            <button className="shop-more">SHOP NOW</button>
-          </Link>
+          <section className="new-arrivals">
+      <div className="container">
+        <h2>New Arrival Products</h2>
+        <div className="products-grid">
+          {newProducts.map((product) => (
+            <ProductCard 
+              key={product.id} 
+              product={product}
+            />
+          ))}
         </div>
-      </section>
+        <Link to="/Shop">
+          <button className="shop-more">SHOP NOW</button>
+        </Link>
+      </div>
+  </section>
+
 
       {/* Vendor List */}
       <section className="vendor-list">

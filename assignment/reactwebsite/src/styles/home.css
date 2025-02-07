@@ -132,6 +132,12 @@
   width: 100%;
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -139,18 +145,65 @@
   margin-top: 2rem;
 }
 
-.product-card {
-  background: white;
-  padding: 1rem;
-  border-radius: 8px;
-  text-align: center;
+.shop-now-btn {
+  background: #1a1a1a;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 4px;
+  border: none;
+  margin-top: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.product-card img {
+.shop-now-btn:hover {
+  background: #333;
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.product-image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  margin-bottom: 1rem;
-  object-fit: cover;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-image-container:hover .hover-overlay {
+  opacity: 1;
+}
+
+.overlay-button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 80%;
+  max-width: 200px;
+  transition: background-color 0.3s ease;
+}
+
+.overlay-button:hover {
+  background-color: #333;
 }
 
 /* Vendor List */
@@ -223,7 +276,7 @@
   line-height: 1.5;
 }
 
-/* Instagram Feed */
+
 /* Instagram Feed Styles */
 .instagram-feed {
   padding: 0.5rem; /* Removed horizontal padding */
