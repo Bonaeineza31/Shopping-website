@@ -18,7 +18,7 @@
   padding: 2.5rem;
   border-radius: 12px;
   width: 100%;
-  max-width: 550px; /* Increased from 400px */
+  max-width: 550px;
   margin: 20px;
   position: relative;
   display: flex;
@@ -46,7 +46,8 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 0 1rem;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 /* Auth title */
@@ -62,7 +63,6 @@
 /* Auth form */
 .auth-form {
   width: 100%;
-  max-width: 400px; /* Increased from 320px */
 }
 
 /* Form groups */
