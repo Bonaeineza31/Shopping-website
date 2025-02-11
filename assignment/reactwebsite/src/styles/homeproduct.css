@@ -1,44 +1,90 @@
-.form-container {
-    width: 100%;
-    max-width: 400px;
-    margin: 40px auto;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+/* Container for both forms */
+.forms-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px;
+    min-height: 100vh;
+    background-color: #f4f4f4;
 }
 
-h2 {
+.form-wrapper {
+    flex: 1;
+    max-width: 500px;
+}
+
+.form-wrapper h2 {
+    text-align: center;
     margin-bottom: 20px;
     color: #333;
+    font-size: 24px;
 }
 
-form {
+/* General form container styling */
+.form-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background-color: transparent;
+}
+
+.forms {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-input {
+.input {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.2);
 }
 
 button {
-    padding: 10px;
-    background: #007bff;
+    background-color: #007bff;
     color: white;
     font-size: 16px;
+    font-weight: bold;
+    padding: 12px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background 0.3s ease-in-out;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background: #0056b3;
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .forms-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-wrapper {
+        width: 100%;
+    }
+
+    .form-1 {
+        height: auto;
+        margin: 20px 0;
+    }
 }
