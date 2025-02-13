@@ -1,27 +1,269 @@
+// import React, { useState } from 'react';
+// import {
+//   Home,
+//   ShoppingCart,
+//   Mail,
+//   Settings,
+//   Headphones,
+//   Package,
+//   Heart,
+//   CheckSquare,
+//   MessageSquare,
+//   Calendar,
+//   FileText,
+//   User,
+//   Store,
+//   BarChart2,
+//   DollarSign,
+//   Users,
+//   Bell,
+//   Shield,
+//   Box,
+//   Truck,
+//   Eye,
+//   EyeOff,
+//   Sun,
+//   Moon,
+//   RefreshCw,
+//   ChevronLeft
+// } from 'lucide-react';
+// import './dashboard-styles/sidebar.css';
+
+// const Sidebar = () => {
+//   const [darkMode, setDarkMode] = useState(false);
+//   const [activeMenu, setActiveMenu] = useState(null);
+//   const [isSidebarHidden, setIsSidebarHidden] = useState(false);
+
+//   const toggleDarkMode = () => {
+//     setDarkMode(!darkMode);
+//     document.body.classList.toggle('dark-mode');
+//   };
+
+//   const handleMenuClick = (menu) => {
+//     setActiveMenu(activeMenu === menu ? null : menu);
+//   };
+
+//   if (isSidebarHidden) {
+//     return (
+//       <button
+//         className="show-sidebar-button"
+//         onClick={() => setIsSidebarHidden(false)}
+//         aria-label="Show Sidebar"
+//       >
+//         <Eye size={24} />
+//       </button>
+//     );
+//   }
+
+//   return (
+//     <aside className={`sidebar ${darkMode ? 'dark' : ''}`}>
+//       <div className="sidebar-header">
+//         <h2>Navigation</h2>
+//         <button
+//           className="hide-sidebar-button"
+//           onClick={() => setIsSidebarHidden(true)}
+//           aria-label="Hide Sidebar"
+//         >
+//           <ChevronLeft size={20} />
+//         </button>
+//       </div>
+
+//       <nav className="sidebar-nav">
+//         {/* Dashboard */}
+//         <a href="/dashboard" className="nav-item">
+//           <Home size={24} />
+//           <span>Dashboard</span>
+//         </a>
+
+//         {/* Store Management */}
+//         <div
+//           className={`nav-item ${activeMenu === 'store' ? 'active' : ''}`}
+//           onClick={() => handleMenuClick('store')}
+//         >
+//           <Store size={24} />
+//           <span>Store Management</span>
+//         </div>
+//         {activeMenu === 'store' && (
+//           <div className="nav-submenu">
+//             <a href="/products" className="submenu-item">
+//               <Package size={20} />
+//               <span>Products</span>
+//             </a>
+//             <a href="/inventory" className="submenu-item">
+//               <Box size={20} />
+//               <span>Inventory</span>
+//             </a>
+//             <a href="/categories" className="submenu-item">
+//               <RefreshCw size={20} />
+//               <span>Categories</span>
+//             </a>
+//           </div>
+//         )}
+
+//         {/* Orders & Shipping */}
+//         <div
+//           className={`nav-item ${activeMenu === 'orders' ? 'active' : ''}`}
+//           onClick={() => handleMenuClick('orders')}
+//         >
+//           <ShoppingCart size={24} />
+//           <span>Orders & Shipping</span>
+//         </div>
+//         {activeMenu === 'orders' && (
+//           <div className="nav-submenu">
+//             <a href="/orders" className="submenu-item">
+//               <CheckSquare size={20} />
+//               <span>All Orders</span>
+//             </a>
+//             <a href="/shipping" className="submenu-item">
+//               <Truck size={20} />
+//               <span>Shipping</span>
+//             </a>
+//             <a href="/returns" className="submenu-item">
+//               <RefreshCw size={20} />
+//               <span>Returns</span>
+//             </a>
+//           </div>
+//         )}
+
+//         {/* Customer Management */}
+//         <div
+//           className={`nav-item ${activeMenu === 'customers' ? 'active' : ''}`}
+//           onClick={() => handleMenuClick('customers')}
+//         >
+//           <Users size={24} />
+//           <span>Customers</span>
+//         </div>
+//         {activeMenu === 'customers' && (
+//           <div className="nav-submenu">
+//             <a href="/customer-list" className="submenu-item">
+//               <User size={20} />
+//               <span>Customer List</span>
+//             </a>
+//             <a href="/reviews" className="submenu-item">
+//               <MessageSquare size={20} />
+//               <span>Reviews</span>
+//             </a>
+//             <a href="/wishlist" className="submenu-item">
+//               <Heart size={20} />
+//               <span>Wishlists</span>
+//             </a>
+//           </div>
+//         )}
+
+//         {/* Analytics */}
+//         <div
+//           className={`nav-item ${activeMenu === 'analytics' ? 'active' : ''}`}
+//           onClick={() => handleMenuClick('analytics')}
+//         >
+//           <BarChart2 size={24} />
+//           <span>Analytics</span>
+//         </div>
+//         {activeMenu === 'analytics' && (
+//           <div className="nav-submenu">
+//             <a href="/sales" className="submenu-item">
+//               <DollarSign size={20} />
+//               <span>Sales Analytics</span>
+//             </a>
+//             <a href="/traffic" className="submenu-item">
+//               <Users size={20} />
+//               <span>Traffic</span>
+//             </a>
+//             <a href="/reports" className="submenu-item">
+//               <FileText size={20} />
+//               <span>Reports</span>
+//             </a>
+//           </div>
+//         )}
+
+//         {/* Communications */}
+//         <div
+//           className={`nav-item ${activeMenu === 'communications' ? 'active' : ''}`}
+//           onClick={() => handleMenuClick('communications')}
+//         >
+//           <Mail size={24} />
+//           <span>Communications</span>
+//         </div>
+//         {activeMenu === 'communications' && (
+//           <div className="nav-submenu">
+//             <a href="/messages" className="submenu-item">
+//               <MessageSquare size={20} />
+//               <span>Messages</span>
+//             </a>
+//             <a href="/notifications" className="submenu-item">
+//               <Bell size={20} />
+//               <span>Notifications</span>
+//             </a>
+//           </div>
+//         )}
+
+//         {/* Support & Settings */}
+//         <a href="/support" className="nav-item">
+//           <Headphones size={24} />
+//           <span>Support</span>
+//         </a>
+
+//         <a href="/settings" className="nav-item">
+//           <Settings size={24} />
+//           <span>Settings</span>
+//         </a>
+
+//         <a href="/security" className="nav-item">
+//           <Shield size={24} />
+//           <span>Security</span>
+//         </a>
+//       </nav>
+
+//       <button className="theme-toggle" onClick={toggleDarkMode}>
+//         {darkMode ? <Sun size={24} /> : <Moon size={24} />}
+//         <span>{darkMode ? 'Light Mode' : 'Dark Mode'}</span>
+//       </button>
+//     </aside>
+//   );
+// };
+
+// export default Sidebar;
+
+
+
 import React, { useState } from 'react';
 import {
   Home,
   ShoppingCart,
   Mail,
   Settings,
-  Headphones,
   Package,
   Heart,
   CheckSquare,
   MessageSquare,
-  Calendar,
   FileText,
   User,
-  Key,
-  LogIn,
+  Store,
+  BarChart2,
+  DollarSign,
+  Users,
+  Bell,
+  Shield,
+  Box,
+  Truck,
+  Eye,
+  EyeOff,
   Sun,
-  Moon
+  Moon,
+  RefreshCw,
+  LogIn,
+  Key,
+  Camera,
+  CreditCard,
+  HelpCircle,
+  Languages,
+  Bell as BellIcon
 } from 'lucide-react';
-import './dashboard-styles/sidebar.css';
+import '../Dashboard/dashboard-styles/sidebar.css';
 
-const Sidebar = ({ isOpen }) => {
+const Sidebar = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
+  const [isSidebarHidden, setIsSidebarHidden] = useState(false);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -32,72 +274,218 @@ const Sidebar = ({ isOpen }) => {
     setActiveMenu(activeMenu === menu ? null : menu);
   };
 
+  if (isSidebarHidden) {
+    return (
+      <button
+        className="show-sidebar-button"
+        onClick={() => setIsSidebarHidden(false)}
+        aria-label="Show Sidebar"
+      >
+        <Eye className="sidebar-icon" size={16} />
+      </button>
+    );
+  }
+
   return (
-    <aside className={`sidebar ${darkMode ? 'dark' : ''} ${isOpen ? 'open' : ''}`}>
+    <aside className={`sidebar ${darkMode ? 'dark' : ''}`}>
+      <div className="sidebar-header">
+        <h2>Navigation</h2>
+      </div>
+
       <nav className="sidebar-nav">
+        {/* Dashboard */}
         <a href="/dashboard" className="nav-item">
-          <Home size={20} />
+          <Home size={24} />
           <span>Dashboard</span>
         </a>
-        
-        <div 
-          className={`nav-item ${activeMenu === 'ecommerce' ? 'active' : ''}`}
-          onClick={() => handleMenuClick('ecommerce')}
+
+        {/* Store Management */}
+        <div
+          className={`nav-item ${activeMenu === 'store' ? 'active' : ''}`}
+          onClick={() => handleMenuClick('store')}
         >
-          <ShoppingCart size={20} />
-          <span>Ecommerce</span>
+          <Store size={24} />
+          <span>Store Management</span>
         </div>
-        {activeMenu === 'ecommerce' && (
+        {activeMenu === 'store' && (
           <div className="nav-submenu">
             <a href="/products" className="submenu-item">
-              <Package size={18} />
+              <Package size={20} />
               <span>Products</span>
             </a>
+            <a href="/inventory" className="submenu-item">
+              <Box size={20} />
+              <span>Inventory</span>
+            </a>
+            <a href="/categories" className="submenu-item">
+              <RefreshCw size={20} />
+              <span>Categories</span>
+            </a>
+          </div>
+        )}
+
+        {/* Orders & Shipping */}
+        <div
+          className={`nav-item ${activeMenu === 'orders' ? 'active' : ''}`}
+          onClick={() => handleMenuClick('orders')}
+        >
+          <ShoppingCart size={24} />
+          <span>Orders & Shipping</span>
+        </div>
+        {activeMenu === 'orders' && (
+          <div className="nav-submenu">
             <a href="/orders" className="submenu-item">
-              <CheckSquare size={18} />
-              <span>Orders</span>
+              <CheckSquare size={20} />
+              <span>All Orders</span>
+            </a>
+            <a href="/shipping" className="submenu-item">
+              <Truck size={20} />
+              <span>Shipping</span>
+            </a>
+            <a href="/returns" className="submenu-item">
+              <RefreshCw size={20} />
+              <span>Returns</span>
+            </a>
+          </div>
+        )}
+
+        {/* Customer Management */}
+        <div
+          className={`nav-item ${activeMenu === 'customers' ? 'active' : ''}`}
+          onClick={() => handleMenuClick('customers')}
+        >
+          <Users size={24} />
+          <span>Customers</span>
+        </div>
+        {activeMenu === 'customers' && (
+          <div className="nav-submenu">
+            <a href="/customer-list" className="submenu-item">
+              <User size={20} />
+              <span>Customer List</span>
+            </a>
+            <a href="/reviews" className="submenu-item">
+              <MessageSquare size={20} />
+              <span>Reviews</span>
             </a>
             <a href="/wishlist" className="submenu-item">
-              <Heart size={18} />
-              <span>Wishlist</span>
+              <Heart size={20} />
+              <span>Wishlists</span>
             </a>
           </div>
         )}
 
-        <div 
-          className={`nav-item ${activeMenu === 'app' ? 'active' : ''}`}
-          onClick={() => handleMenuClick('app')}
+        {/* Analytics */}
+        <div
+          className={`nav-item ${activeMenu === 'analytics' ? 'active' : ''}`}
+          onClick={() => handleMenuClick('analytics')}
         >
-          <Mail size={20} />
-          <span>App</span>
+          <BarChart2 size={24} />
+          <span>Analytics</span>
         </div>
-        {activeMenu === 'app' && (
+        {activeMenu === 'analytics' && (
+          <div className="nav-submenu">
+            <a href="/sales" className="submenu-item">
+              <DollarSign size={20} />
+              <span>Sales Analytics</span>
+            </a>
+            <a href="/traffic" className="submenu-item">
+              <Users size={20} />
+              <span>Traffic</span>
+            </a>
+            <a href="/reports" className="submenu-item">
+              <FileText size={20} />
+              <span>Reports</span>
+            </a>
+          </div>
+        )}
+
+        {/* Communications */}
+        <div
+          className={`nav-item ${activeMenu === 'communications' ? 'active' : ''}`}
+          onClick={() => handleMenuClick('communications')}
+        >
+          <Mail size={24} />
+          <span>Communications</span>
+        </div>
+        {activeMenu === 'communications' && (
           <div className="nav-submenu">
             <a href="/messages" className="submenu-item">
-              <MessageSquare size={18} />
+              <MessageSquare size={20} />
               <span>Messages</span>
             </a>
-            <a href="/calendar" className="submenu-item">
-              <Calendar size={18} />
-              <span>Calendar</span>
-            </a>
-            <a href="/files" className="submenu-item">
-              <FileText size={18} />
-              <span>Files</span>
+            <a href="/notifications" className="submenu-item">
+              <Bell size={20} />
+              <span>Notifications</span>
             </a>
           </div>
         )}
 
-        <a href="/support" className="nav-item">
-          <Headphones size={20} />
-          <span>Support</span>
+        {/* Settings */}
+        <div
+          className={`nav-item ${activeMenu === 'settings' ? 'active' : ''}`}
+          onClick={() => handleMenuClick('settings')}
+        >
+          <Settings size={24} />
+          <span>Settings</span>
+        </div>
+        {activeMenu === 'settings' && (
+          <div className="nav-submenu">
+            <a href="/profile" className="submenu-item">
+              <User size={20} />
+              <span>Profile Settings</span>
+            </a>
+            <a href="/login" className="submenu-item">
+              <LogIn size={20} />
+              <span>Login/Register</span>
+            </a>
+            <a href="/password" className="submenu-item">
+              <Key size={20} />
+              <span>Change Password</span>
+            </a>
+            <a href="/avatar" className="submenu-item">
+              <Camera size={20} />
+              <span>Avatar Settings</span>
+            </a>
+            <a href="/billing" className="submenu-item">
+              <CreditCard size={20} />
+              <span>Billing Settings</span>
+            </a>
+            <a href="/notifications" className="submenu-item">
+              <BellIcon size={20} />
+              <span>Notification Settings</span>
+            </a>
+            <a href="/language" className="submenu-item">
+              <Languages size={20} />
+              <span>Language Settings</span>
+            </a>
+            <a href="/help" className="submenu-item">
+              <HelpCircle size={20} />
+              <span>Help & Support</span>
+            </a>
+          </div>
+        )}
+
+        <a href="/security" className="nav-item">
+          <Shield size={24} />
+          <span>Security</span>
         </a>
       </nav>
 
-      <button className="theme-toggle" onClick={toggleDarkMode}>
-        {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-        <span>{darkMode ? 'Light Mode' : 'Dark Mode'}</span>
-      </button>
+      <div className="sidebar-footer">
+        <button className="theme-toggle" onClick={toggleDarkMode}>
+          {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+          <span>{darkMode ? 'Light Mode' : 'Dark Mode'}</span>
+        </button>
+        
+        <button 
+          className="hide-sidebar-toggle"
+          onClick={() => setIsSidebarHidden(true)}
+          aria-label="Hide Sidebar"
+        >
+          <EyeOff className="sidebar-icon" size={16} />
+          <span>Hide Sidebar</span>
+        </button>
+      </div>
     </aside>
   );
 };

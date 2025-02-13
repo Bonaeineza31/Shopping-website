@@ -13,11 +13,12 @@ import ProductCard from './components/ProductCard.jsx'
 import HomeProduct from'./components/HomeProduct'
 import Dashboardlayout from './Dashboard/Dashboardlayout.jsx'
 import DashboardView from './Dashboard/DashboardView'
-import Example from './Dashboard/DashboardView'
+import { ThemeProvider } from './Dashboard/Theme';
 
 
 function App() {
   return (
+    <ThemeProvider>
     <BrowserRouter>
      <Routes>
       <Route path="/" element={<Layout />}>
@@ -35,9 +36,10 @@ function App() {
         </Route>
         <Route path="/" element={<Dashboardlayout />}>
         <Route path="/dashboard" index element={<DashboardView/>} />
-  </Route>
+         </Route>
     </Routes>
     </BrowserRouter>
+    </ThemeProvider>
    
   );
 }
