@@ -1,6 +1,8 @@
 
 import React, { useState } from 'react';
 import {Link} from 'react-router-dom'
+import newproduct from './Newproduct';
+
 import {
   Home,
   ShoppingCart,
@@ -84,12 +86,10 @@ const Sidebar = () => {
         </div>
         {activeMenu === 'store' && (
           <div className="nav-submenu">
-          <div className="nav-submenu">
-            <Link to="/Newproduct" className="submenu-item">
+            <Link to="/newproduct" className="submenu-item">
               <Package size={20} />
               Products
             </Link>
-          </div>
             <a href="/inventory" className="submenu-item">
               <Box size={20} />
               <span>Inventory</span>

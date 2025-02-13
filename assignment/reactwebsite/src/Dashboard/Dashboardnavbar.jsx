@@ -4,6 +4,7 @@ import usflag from './pics/Screenshot 2025-02-12 152933.png'
 import pp3 from './pics/pp3.jpg'
 import './dashboard-styles/dashboardnavbar.css'
 import { IoReorderThree } from "react-icons/io5";
+import {Link} from 'react-router-dom'
 import germanflag from './pics/Screenshot 2025-02-12 164728.png'
 import italianflag from './pics/Screenshot 2025-02-12 164919.png'
 import frenchflag from './pics/Screenshot 2025-02-12 165053.png'
@@ -32,9 +33,9 @@ const Dashboardnavbar = ({ toggleSidebar, isSidebarOpen }) => {
     <nav className="navbar">
       <div className="navbar-left">
 
-        <div className="logo-container">
-          <h1 className="logo-text">Botigo</h1>
-        </div>
+      <Link to="/Home">
+     <h1 className="logo-text">Botigo</h1>
+      </Link>
 
         {/* <button 
           className="menu-toggle"
