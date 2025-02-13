@@ -11,6 +11,9 @@ import './App.css'
 import SinglePage from './components/SinglePage.jsx'
 import ProductCard from './components/ProductCard.jsx'
 import HomeProduct from'./components/HomeProduct'
+import Dashboardlayout from './Dashboard/Dashboardlayout.jsx'
+import DashboardView from './Dashboard/DashboardView'
+
 
 function App() {
   return (
@@ -25,7 +28,12 @@ function App() {
         <Route path="/HomeProduct" element={<HomeProduct />} />
         <Route path="/product/:id" element={<ProductCard />} />
         <Route path="category/:id" element={<SinglePage/>} />
+        <Route path="/" element={<Dashboardlayout />} />
+        <Route index element={<DashboardView />} />
        </Route>
+       <Route path="/" element={<Dashboardlayout />}>
+        <Route path='/dashboard' index element={<DashboardView />} />
+        </Route>
     </Routes>
   );
 }

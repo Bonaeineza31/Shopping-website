@@ -1,0 +1,126 @@
+
+.sidebar {
+  width: 260px;
+  height: calc(100vh - 70px);
+  background-color: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  position: fixed;
+  left: 0;
+  top: 70px;
+  z-index: 40;
+  transition: all 0.3s ease;
+  transform: translateX(-100%);
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar.dark {
+  background-color: #1f2937;
+  border-right-color: #374151;
+}
+
+.sidebar-nav {
+  padding: 1rem 0;
+  height: calc(100% - 60px);
+  overflow-y: auto;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  color: #4b5563;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  background-color: #f3f4f6;
+  color: #2563eb;
+}
+
+.dark .nav-item:hover,
+.dark .nav-item.active {
+  background-color: #374151;
+  color: #60a5fa;
+}
+
+.nav-item svg {
+  margin-right: 0.75rem;
+}
+
+.nav-submenu {
+  padding-left: 1rem;
+  background-color: #f9fafb;
+}
+
+.dark .nav-submenu {
+  background-color: #1f2937;
+}
+
+.submenu-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1.5rem;
+  color: #6b7280;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.submenu-item:hover {
+  color: #2563eb;
+}
+
+.dark .submenu-item {
+  color: #9ca3af;
+}
+
+.dark .submenu-item:hover {
+  color: #60a5fa;
+}
+
+.submenu-item svg {
+  margin-right: 0.75rem;
+}
+
+.theme-toggle {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background-color: #1d4ed8;
+}
+
+.theme-toggle svg {
+  margin-right: 0.5rem;
+}
+
+/* Container for the main content */
+.main-content {
+  margin-left: 260px;
+  margin-top: 70px;
+  padding: 2rem;
+  transition: margin-left 0.3s ease;
+}
+
+/* When sidebar is closed */
+.sidebar:not(.open) + .main-content {
+  margin-left: 0;
+}
