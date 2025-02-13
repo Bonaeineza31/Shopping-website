@@ -35,9 +35,9 @@ function App() {
           </Route>
 
           {/* Dashboard Routes */}
-           <Route path="/dashboard" element={<Dashboardlayout />}>
-            <Route index element={<DashboardView />} />
-            {/* <Route path="/newproduct" element={<Newproduct />} /> */}
+           <Route path="/" element={<Dashboardlayout />}>
+            <Route path="/dashboard" index element={<DashboardView />} />
+            <Route path="/newproduct" element={<Newproduct />} />
           </Route>
 
         </Routes>

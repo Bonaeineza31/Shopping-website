@@ -1,0 +1,159 @@
+.products-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 15px;
+    background: #f8f9fa;
+  }
+  
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+  }
+  
+  .product-card {
+    background: white;
+    border-radius: 8px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .product-card .sale-label {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #ff4081;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    z-index: 1;
+  }
+  
+  .product-image {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+  }
+  
+  .product-image img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 160px;
+    object-fit: contain;
+  }
+  
+  .product-info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .product-name {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+    font-weight: normal;
+  }
+  
+  .price-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .current-price {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .original-price {
+    font-size: 13px;
+    text-decoration: line-through;
+    color: #999;
+  }
+  
+  .rating {
+    color: #ffc107;
+    font-size: 13px;
+  }
+  
+  .add-to-cart {
+    background: #4A90E2;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 100%;
+    font-size: 13px;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  
+  .add-to-cart::before {
+    content: "🛒";
+    font-size: 13px;
+  }
+  
+  .add-to-cart:hover {
+    background: #357ABD;
+  }
+  
+  .promotion-banner {
+    text-align: center;
+    padding: 40px 20px;
+    background: white;
+    border-radius: 8px;
+    margin: 30px 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+  
+  .promotion-banner h2 {
+    color: #333;
+    margin: 0 0 8px 0;
+    font-size: 24px;
+  }
+  
+  .promotion-banner p {
+    color: #666;
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  @media (max-width: 1200px) {
+    .products-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .products-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .products-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .products-container {
+      padding: 10px;
+    }
+  }
