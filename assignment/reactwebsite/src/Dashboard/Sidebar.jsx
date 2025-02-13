@@ -84,10 +84,12 @@ const Sidebar = () => {
         </div>
         {activeMenu === 'store' && (
           <div className="nav-submenu">
-            <a href="/products" className="submenu-item">
+          <div className="nav-submenu">
+            <Link to="/Newproduct" className="submenu-item">
               <Package size={20} />
-             <Link to="/products">Products</Link>
-            </a>
+              Products
+            </Link>
+          </div>
             <a href="/inventory" className="submenu-item">
               <Box size={20} />
               <span>Inventory</span>

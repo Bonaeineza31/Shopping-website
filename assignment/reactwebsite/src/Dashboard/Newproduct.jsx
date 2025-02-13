@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const NewProduct = () => {
+const Newproduct = () => {
   const [product, setProduct] = useState({
     name: "",
     price: "",
@@ -32,4 +32,4 @@ const NewProduct = () => {
   );
 };
 
-export default NewProduct;
+export default Newproduct;
