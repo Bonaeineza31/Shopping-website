@@ -4,19 +4,21 @@ import Dashboardnavbar from '../Dashboard/Dashboardnavbar';
 import Sidebar from '../Dashboard/Sidebar';
 
 const Dashboardlayout = () => {
-  const [SidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
 
   const toggleSidebar = () => {
-    setSidebarOpen(!SidebarOpen);
+    setSidebarOpen(!sidebarOpen);
   };
 
   return (
-    <div className="dashboard-container">
-      <Dashboardnavbar toggleSidebar={toggleSidebar} isSidebarOpen={SidebarOpen} />
-      <Sidebar isOpen={SidebarOpen} />
-      <main className={`dashboard-content ${SidebarOpen ? 'Sidebar-open' : ''}`}>
-        <Outlet />
-      </main>
+    <div className="dashboard-wrapper">
+      <Dashboardnavbar onToggle={toggleSidebar} />
+      <div className="dashboard-container">
+        <Sidebar isOpen={sidebarOpen} />
+        <main className={`main-content ${sidebarOpen ? 'sidebar-open' : ''}`}>
+          <Outlet />
+        </main>
+      </div>
     </div>
   );
 };

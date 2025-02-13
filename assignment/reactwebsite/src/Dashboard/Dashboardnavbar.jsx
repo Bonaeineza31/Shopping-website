@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Bell, Globe, Search, ChevronDown, User, Wallet, Settings, Lock, LogOut , X} from 'lucide-react';
+import { Bell, Globe, Search, ChevronDown, User, Wallet, Settings, Lock, LogOut,  X}  from 'lucide-react';
 import usflag from './pics/Screenshot 2025-02-12 152933.png'
 import pp3 from './pics/pp3.jpg'
 import './dashboard-styles/dashboardnavbar.css'
@@ -35,12 +35,12 @@ const Dashboardnavbar = ({ toggleSidebar, isSidebarOpen }) => {
           <h1 className="logo-text">Botigo</h1>
         </div>
 
-        <button 
+        {/* <button 
           className="menu-toggle"
           onClick={toggleSidebar}  
         >
           {isSidebarOpen ? <IoReorderThree size={24} /> : <Menu size={24} />}
-        </button>
+        </button> */}
 
         <div className="search-container">
           <input 

@@ -1,0 +1,119 @@
+.dashboard-wrapper {
+    padding: 1.5rem;
+    background-color: #f9fafb;
+    min-height: 100vh;
+  }
+  
+  /* Metrics Grid */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    .metrics-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .metrics-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  .metric-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+  }
+  
+  .metric-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .metric-info {
+    flex: 1;
+  }
+  
+  .metric-label {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .metric-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0.25rem 0;
+  }
+  
+  .metric-change {
+    font-size: 0.875rem;
+  }
+  
+  .metric-change.positive {
+    color: #10b981;
+  }
+  
+  .metric-change.negative {
+    color: #ef4444;
+  }
+  
+  .metric-icon {
+    width: 3rem;
+    height: 3rem;
+    color: #e5e7eb;
+  }
+  
+  /* Charts Grid */
+  .charts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  @media (min-width: 1024px) {
+    .charts-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  .chart-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+  }
+  
+  .chart-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1f2937;
+  }
+  
+  /* Sidebar adjustments */
+  .main-content {
+    margin-left: 0;
+    transition: margin-left 0.3s ease;
+  }
+  
+  .main-content.sidebar-open {
+    margin-left: 260px;
+  }
+  
+  @media (min-width: 1024px) {
+    .sidebar {
+      transform: translateX(0);
+    }
+    
+    .main-content {
+      margin-left: 260px;
+    }
+  }

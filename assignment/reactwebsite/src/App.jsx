@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import Layout from './components/Layout'
 import Home from './components/Home.jsx'
 import Shop from './components/Shop'
@@ -13,11 +13,13 @@ import ProductCard from './components/ProductCard.jsx'
 import HomeProduct from'./components/HomeProduct'
 import Dashboardlayout from './Dashboard/Dashboardlayout.jsx'
 import DashboardView from './Dashboard/DashboardView'
+import Example from './Dashboard/DashboardView'
 
 
 function App() {
   return (
-    <Routes>..
+    <BrowserRouter>
+     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="/Contact" element={<Contact />} />
@@ -30,11 +32,13 @@ function App() {
         <Route path="category/:id" element={<SinglePage/>} />
         <Route path="/" element={<Dashboardlayout />} />
         <Route index element={<DashboardView />} />
-       </Route>
-       <Route path="/" element={<Dashboardlayout />}>
-        <Route path='/dashboard' index element={<DashboardView />} />
         </Route>
+        <Route path="/" element={<Dashboardlayout />}>
+        <Route path="/dashboard" index element={<DashboardView/>} />
+  </Route>
     </Routes>
+    </BrowserRouter>
+   
   );
 }
 
