@@ -14,6 +14,7 @@ import HomeProduct from'./components/HomeProduct'
 import Dashboardlayout from './Dashboard/Dashboardlayout.jsx'
 import DashboardView from './Dashboard/DashboardView'
 import { ThemeProvider } from './Dashboard/Theme';
+import Newproduct from "./Dashboard/Newproduct";
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
         </Route>
         <Route path="/" element={<Dashboardlayout />}>
         <Route path="/dashboard" index element={<DashboardView/>} />
+        <Route path="/Newproduct" element={<Newproduct />} />
          </Route>
     </Routes>
     </BrowserRouter>

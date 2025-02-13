@@ -1,10 +1,18 @@
 import React from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell, BarChart, Bar } from 'recharts';
 import { Users, Clock, TrendingUp, Target } from 'lucide-react';
+
 import './dashboard-styles/dashboardview.css'
 
 
 // Sample data
+const COLORS = ["#4A90E2", "#7B8AB8", "#A0A6BF", "#C3C8D5", "#6E7F80"];
+const paymentData = [
+  { method: 'Credit Card', percentage: 45 },
+  { method: 'PayPal', percentage: 25 },
+  { method: 'Mobile Money', percentage: 20 },
+  { method: 'Cash on Delivery', percentage: 10 },
+];
 const visitData = [
   { time: '00:00', newVisits: 30, uniqueVisits: 45 },
   { time: '03:00', newVisits: 45, uniqueVisits: 60 },
@@ -30,7 +38,7 @@ const channelData = [
   { name: 'Campaign', value: 2400 },
 ];
 
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8'];
+// const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8'];
 
 const DashboardView = () => {
   return (
@@ -86,62 +94,86 @@ const DashboardView = () => {
       <div className="charts-grid">
         {/* Audience Overview */}
         <div className="chart-card">
-          <h3 className="chart-title">Audience Overview</h3>
-          <ResponsiveContainer width="100%" height={300}>
-            <LineChart data={visitData}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="time" />
-              <YAxis />
-              <Tooltip />
-              <Legend />
-              <Line type="monotone" dataKey="newVisits" stroke="#8884d8" name="New Visits" />
-              <Line type="monotone" dataKey="uniqueVisits" stroke="#82ca9d" name="Unique Visits" />
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
+  <h3 className="chart-title">Audience Overview</h3>
+  <ResponsiveContainer width="100%" height={300}>
+    <LineChart data={visitData}>
+      <CartesianGrid strokeDasharray="3 3" stroke="#E0E0E0" />
+      <XAxis dataKey="time" stroke="#7B8AB8" />
+      <YAxis stroke="#7B8AB8" />
+      <Tooltip />
+      <Legend />
+      <Line type="monotone" dataKey="newVisits" stroke="#4A90E2" name="New Visits" />
+      <Line type="monotone" dataKey="uniqueVisits" stroke="#7B8AB8" name="Unique Visits" />
+    </LineChart>
+  </ResponsiveContainer>
+</div>
 
-        {/* Sessions by Device */}
-        <div className="chart-card">
-          <h3 className="chart-title">Sessions by Device</h3>
-          <ResponsiveContainer width="100%" height={300}>
-            <PieChart>
-              <Pie
-                data={deviceData}
-                cx="50%"
-                cy="50%"
-                innerRadius={60}
-                outerRadius={80}
-                fill="#8884d8"
-                paddingAngle={5}
-                dataKey="value"
-                label
-              >
-                {deviceData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                ))}
-              </Pie>
-              <Tooltip />
-              <Legend />
-            </PieChart>
-          </ResponsiveContainer>
-        </div>
+{/* Sessions by Device */}
+<div className="chart-card">
+  <h3 className="chart-title">Sessions by Device</h3>
+  <ResponsiveContainer width="100%" height={300}>
+    <PieChart>
+      <Pie
+        data={deviceData}
+        cx="50%"
+        cy="50%"
+        innerRadius={60}
+        outerRadius={80}
+        fill="#4A90E2"
+        paddingAngle={5}
+        dataKey="value"
+        label
+      >
+        {deviceData.map((entry, index) => (
+          <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+        ))}
+      </Pie>
+      <Tooltip />
+      <Legend />
+    </PieChart>
+  </ResponsiveContainer>
+</div>
+
+{/* Sessions by Channel */}
+<div className="chart-card">
+  <h3 className="chart-title">Sessions by Channel</h3>
+  <ResponsiveContainer width="100%" height={300}>
+    <BarChart data={channelData}>
+      <CartesianGrid strokeDasharray="3 3" stroke="#E0E0E0" />
+      <XAxis dataKey="name" stroke="#7B8AB8" />
+      <YAxis stroke="#7B8AB8" />
+      <Tooltip />
+      <Bar dataKey="value" fill="#4A90E2">
+        {channelData.map((entry, index) => (
+          <Cell key={index} fill={COLORS[index % COLORS.length]} />
+        ))}
+      </Bar>
+    </BarChart>
+  </ResponsiveContainer>
+</div>
 
         {/* Sessions by Channel */}
         <div className="chart-card">
-          <h3 className="chart-title">Sessions by Channel</h3>
-          <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={channelData}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Tooltip />
-              <Bar dataKey="value" fill="#8884d8">
-                {channelData.map((entry, index) => (
-                  <Cell key={index} fill={COLORS[index % COLORS.length]} />
-                ))}
-              </Bar>
-            </BarChart>
-          </ResponsiveContainer>
+          <h3>Session by Payment</h3>
+        <ResponsiveContainer width="100%" height={300}>
+      <PieChart>
+        <Pie
+          data={paymentData}
+          dataKey="percentage"
+          nameKey="method"
+          cx="50%"
+          cy="50%"
+          outerRadius={100}
+          label
+        >
+          {paymentData.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+          ))}
+        </Pie>
+        <Tooltip />
+        <Legend />
+      </PieChart>
+    </ResponsiveContainer>
         </div>
       </div>
     </div>
