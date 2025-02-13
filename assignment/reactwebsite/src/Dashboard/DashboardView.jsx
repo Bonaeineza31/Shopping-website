@@ -3,6 +3,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 import { Users, Clock, TrendingUp, Target } from 'lucide-react';
 import './dashboard-styles/dashboardview.css'
 
+
 // Sample data
 const visitData = [
   { time: '00:00', newVisits: 30, uniqueVisits: 45 },

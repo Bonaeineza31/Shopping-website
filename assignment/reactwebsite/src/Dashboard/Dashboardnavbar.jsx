@@ -10,6 +10,7 @@ import frenchflag from './pics/Screenshot 2025-02-12 165053.png'
 import spanishflag from './pics/Screenshot 2025-02-13 091419.png'
 
 
+
 const Dashboardnavbar = ({ toggleSidebar, isSidebarOpen }) => {
     const [showNotifications, setShowNotifications] = useState(false);
     const [showProfile, setShowProfile] = useState(false);
@@ -140,7 +141,7 @@ const Dashboardnavbar = ({ toggleSidebar, isSidebarOpen }) => {
             onClick={() => setShowProfile(!showProfile)}
           >
             <img 
-              src="/path-to-profile-image.jpg" 
+              src={pp3}
               alt="Profile" 
               className="profile-image"
             />
