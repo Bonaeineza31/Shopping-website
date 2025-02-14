@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import {Link} from 'react-router-dom'
 import newproduct from './Newproduct';
+import { useTheme } from './Theme';
 
 import {
   Home,
@@ -38,14 +39,14 @@ import {
 import '../Dashboard/dashboard-styles/sidebar.css';
 
 const Sidebar = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const { isDarkMode, toggleTheme } = useTheme();
   const [activeMenu, setActiveMenu] = useState(null);
   const [isSidebarHidden, setIsSidebarHidden] = useState(false);
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.body.classList.toggle('dark-mode');
-  };
+  // const toggleTheme = () => {
+  //   setDarkMode(!darkMode);
+  //   document.body.classList.toggle('dark-mode');
+  // };
 
   const handleMenuClick = (menu) => {
     setActiveMenu(activeMenu === menu ? null : menu);
@@ -64,7 +65,7 @@ const Sidebar = () => {
   }
 
   return (
-    <aside className={`sidebar ${darkMode ? 'dark' : ''}`}>
+    <aside className={`sidebar ${isDarkMode ? 'dark' : ''}`}>
       <div className="sidebar-header">
         <h2>Navigation</h2>
       </div>
@@ -249,9 +250,9 @@ const Sidebar = () => {
       </nav>
 
       <div className="sidebar-footer">
-        <button className="theme-toggle" onClick={toggleDarkMode}>
-          {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-          <span>{darkMode ? 'Light Mode' : 'Dark Mode'}</span>
+      <button className="theme-toggle" onClick={toggleTheme}>
+          {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+          <span>{isDarkMode ? 'Light Mode' : 'Dark Mode'}</span>
         </button>
         
         <button 

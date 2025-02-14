@@ -1,0 +1,161 @@
+/* global.css (create this file and import it in your index.js/App.jsx) */
+:root {
+    /* Light theme variables */
+    --bg-primary-light: #ffffff;
+    --bg-secondary-light: #f8f9fa;
+    --text-primary-light: #333333;
+    --text-secondary-light: #666666;
+    --border-light: #e0e0e0;
+    --input-bg-light: #f5f5f5;
+    --hover-light: #f0f0f0;
+    --active-light: #e8e8e8;
+    --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    /* Dark theme variables */
+    --bg-primary-dark: #1a1a1a;
+    --bg-secondary-dark: #2d2d2d;
+    --text-primary-dark: #ffffff;
+    --text-secondary-dark: #cccccc;
+    --border-dark: #404040;
+    --input-bg-dark: #333333;
+    --hover-dark: #3d3d3d;
+    --active-dark: #404040;
+    --shadow-dark: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Base styles that affect the entire application */
+  .app-wrapper {
+    min-height: 100vh;
+    background-color: var(--bg-secondary-light);
+    color: var(--text-primary-light);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .app-wrapper.dark {
+    background-color: var(--bg-secondary-dark);
+    color: var(--text-primary-dark);
+  }
+  
+  /* Global component styles */
+  .app-wrapper button {
+    color: inherit;
+  }
+  
+  .app-wrapper input,
+  .app-wrapper textarea,
+  .app-wrapper select {
+    background-color: var(--input-bg-light);
+    color: var(--text-primary-light);
+    border: 1px solid var(--border-light);
+  }
+  
+  .app-wrapper.dark input,
+  .app-wrapper.dark textarea,
+  .app-wrapper.dark select {
+    background-color: var(--input-bg-dark);
+    color: var(--text-primary-dark);
+    border-color: var(--border-dark);
+  }
+  
+  /* Card styles */
+  .card {
+    background-color: var(--bg-primary-light);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-light);
+  }
+  
+  .dark .card {
+    background-color: var(--bg-primary-dark);
+    border-color: var(--border-dark);
+    box-shadow: var(--shadow-dark);
+  }
+  
+  /* Table styles */
+  table {
+    background-color: var(--bg-primary-light);
+    color: var(--text-primary-light);
+    border-color: var(--border-light);
+  }
+  
+  .dark table {
+    background-color: var(--bg-primary-dark);
+    color: var(--text-primary-dark);
+    border-color: var(--border-dark);
+  }
+  
+  th, td {
+    border-color: var(--border-light);
+  }
+  
+  .dark th,
+  .dark td {
+    border-color: var(--border-dark);
+  }
+  
+  /* Form elements */
+  .form-control {
+    background-color: var(--input-bg-light);
+    color: var(--text-primary-light);
+    border: 1px solid var(--border-light);
+  }
+  
+  .dark .form-control {
+    background-color: var(--input-bg-dark);
+    color: var(--text-primary-dark);
+    border-color: var(--border-dark);
+  }
+  
+  /* Modal/Dialog styles */
+  .modal {
+    background-color: var(--bg-primary-light);
+    color: var(--text-primary-light);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-light);
+  }
+  
+  .dark .modal {
+    background-color: var(--bg-primary-dark);
+    color: var(--text-primary-dark);
+    border-color: var(--border-dark);
+    box-shadow: var(--shadow-dark);
+  }
+  
+  /* Button styles */
+  .btn {
+    background-color: var(--bg-primary-light);
+    color: var(--text-primary-light);
+    border: 1px solid var(--border-light);
+  }
+  
+  .dark .btn {
+    background-color: var(--bg-primary-dark);
+    color: var(--text-primary-dark);
+    border-color: var(--border-dark);
+  }
+  
+  /* Links */
+  a {
+    color: var(--text-primary-light);
+  }
+  
+  .dark a {
+    color: var(--text-primary-dark);
+  }
+  
+  /* Scrollbar customization */
+  .dark ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .dark ::-webkit-scrollbar-track {
+    background: var(--bg-secondary-dark);
+  }
+  
+  .dark ::-webkit-scrollbar-thumb {
+    background: var(--border-dark);
+    border-radius: 5px;
+  }
+  
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: var(--hover-dark);
+  }

@@ -1,0 +1,106 @@
+/* styles.css */
+:root {
+    /* Light theme variables */
+    --background-light: #ffffff;
+    --text-light: #333333;
+    --sidebar-light: #f5f5f5;
+    --border-light: #e0e0e0;
+    
+    /* Dark theme variables */
+    --background-dark: #1a1a1a;
+    --text-dark: #ffffff;
+    --sidebar-dark: #2d2d2d;
+    --border-dark: #404040;
+  }
+  
+  /* Base styles */
+  body {
+    margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Light theme (default) */
+  .dashboard-wrapper {
+    background-color: var(--background-light);
+    color: var(--text-light);
+  }
+  
+  .sidebar {
+    background-color: var(--sidebar-light);
+    border-right: 1px solid var(--border-light);
+  }
+  
+  /* Dark theme */
+  .dark .dashboard-wrapper {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+  }
+  
+  .dark .sidebar {
+    background-color: var(--sidebar-dark);
+    border-right: 1px solid var(--border-dark);
+  }
+  
+  /* Layout styles */
+  .dashboard-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dashboard-container {
+    display: flex;
+    flex: 1;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    transition: margin-left 0.3s;
+  }
+  
+  .main-content.sidebar-open {
+    margin-left: 240px;
+  }
+  
+  /* Sidebar styles */
+  .sidebar {
+    width: 240px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: transform 0.3s;
+  }
+  
+  .sidebar:not(.open) {
+    transform: translateX(-240px);
+  }
+  
+  .sidebar-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+  
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    width: 100%;
+    background-color: transparent;
+    color: inherit;
+  }
+  
+  .theme-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  .dark .theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }

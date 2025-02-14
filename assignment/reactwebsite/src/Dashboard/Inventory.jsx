@@ -2,6 +2,7 @@ import React from 'react';
 import './dashboard-styles/inventory.css';
 import { Pencil, Trash2 } from 'lucide-react';
 
+
 // Import product images
 import appleWatch from './pics/Screenshot 2025-02-14 084402.png';
 import bataShoes from './pics/Screenshot 2025-02-14 084424.png';
