@@ -31,7 +31,7 @@ const Newproduct = () => {
               <span className="original-price">${product.originalPrice.toFixed(2)}</span>
             </div>
             <div className="rating">{renderStars(product.rating)}</div>
-            <button className="add-to-cart">Add To Cart</button>
+            {/* <button className="add-to-cart">Add To Cart</button> */}
           </div>
         </div>
       ))}
