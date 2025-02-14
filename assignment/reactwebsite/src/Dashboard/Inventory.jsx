@@ -2,6 +2,16 @@ import React from 'react';
 import './dashboard-styles/inventory.css';
 import { Pencil, Trash2 } from 'lucide-react';
 
+// Import product images
+import appleWatch from './pics/Screenshot 2025-02-14 084402.png';
+import bataShoes from './pics/Screenshot 2025-02-14 084424.png';
+import bestLookChair from './pics/Screenshot 2025-02-14 084449.png';
+import brownChair from './pics/Screenshot 2025-02-14 084429.png';
+import coscoVolleyball from './pics/Screenshot 2025-02-14 084434.png';
+import greenChair from './pics/Screenshot 2025-02-14 084445.png';
+import importantChair from './pics/Screenshot 2025-02-14 084449.png';
+import laviePurse from './pics/Screenshot 2025-02-14 084455.png';
+
 const Inventory = () => {
   const products = [
     {
@@ -12,8 +22,8 @@ const Inventory = () => {
       pics: 32,
       price: 39,
       status: "Stock",
-      colors: ["green", "red", "navy", "gray", "yellow"],
-      image: "/path-to-watch-image.jpg"
+      colors: ["#22c55e", "#dc2626", "#1e40af", "#4b5563", "#eab308"],
+      image: appleWatch
     },
     {
       id: 2,
@@ -23,10 +33,75 @@ const Inventory = () => {
       pics: 24,
       price: 49,
       status: "Stock",
-      colors: ["green", "red", "navy", "gray", "yellow"],
-      image: "/path-to-shoes-image.jpg"
+      colors: ["#22c55e", "#dc2626", "#1e40af", "#4b5563", "#eab308"],
+      image: bataShoes
+    },
+    {
+      id: 3,
+      name: "Best Look Chair",
+      model: "Size-05 (Model 2019)",
+      category: "Interior",
+      pics: 32,
+      price: 39,
+      status: "Stock",
+      colors: ["#22c55e", "#dc2626", "#1e40af", "#4b5563", "#eab308"],
+      image: bestLookChair
+    },
+    {
+      id: 4,
+      name: "Brown Morden Chair",
+      model: "Size-05 (Model 2019)",
+      category: "Interior",
+      pics: 6,
+      price: 20,
+      status: "Stock",
+      colors: ["#22c55e", "#1e40af", "#eab308"],
+      image: brownChair
+    },
+    {
+      id: 5,
+      name: "Cosco Volleyball",
+      model: "Size-04 (Model 2019)",
+      category: "Sports",
+      pics: 8,
+      price: 49,
+      status: "Stock",
+      colors: ["#22c55e", "#1e40af"],
+      image: coscoVolleyball
+    },
+    {
+      id: 6,
+      name: "Green Morden Chair",
+      model: "Size-Medium (Model 2019)",
+      category: "Interior",
+      pics: 10,
+      price: 99,
+      status: "Sold",
+      colors: ["#22c55e", "#dc2626", "#1e40af"],
+      image: greenChair
+    },
+    {
+      id: 7,
+      name: "Important Chair",
+      model: "Size-05 (Model 2019)",
+      category: "Interior",
+      pics: 32,
+      price: 39,
+      status: "Stock",
+      colors: ["#22c55e", "#dc2626", "#1e40af", "#4b5563", "#eab308"],
+      image: importantChair
+    },
+    {
+      id: 8,
+      name: "Lava Purse",
+      model: "Size-Medium (Model 2019)",
+      category: "Fashion",
+      pics: 32,
+      price: 39,
+      status: "Stock",
+      colors: ["#22c55e", "#dc2626", "#1e40af", "#4b5563", "#eab308"],
+      image: laviePurse
     }
-    // Add more products as needed
   ];
 
   return (
