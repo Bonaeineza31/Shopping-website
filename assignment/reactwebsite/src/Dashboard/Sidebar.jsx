@@ -112,7 +112,7 @@ const Sidebar = () => {
         </div>
         {activeMenu === 'orders' && (
           <div className="nav-submenu">
-            <a href="/orders" className="submenu-item">
+            <a href="/order" className="submenu-item">
               <CheckSquare size={20} />
               <span>All Orders</span>
             </a>

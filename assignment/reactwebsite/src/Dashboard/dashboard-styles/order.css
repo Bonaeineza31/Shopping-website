@@ -1,0 +1,184 @@
+/* orders.css */
+.orders-container {
+    padding: 24px;
+    background-color: #f8f9fa;
+  }
+  
+  .orders-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  .orders-header h1 {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+  }
+  
+  .header-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px 12px;
+    width: 300px;
+  }
+  
+  .search-bar input {
+    border: none;
+    outline: none;
+    margin-left: 8px;
+    width: 100%;
+  }
+  
+  .filter-btn, .export-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .filter-btn:hover, .export-btn:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .analytics-section {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  
+  .chart-container {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .chart-container h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 16px;
+  }
+  
+  .orders-table-container {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .orders-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .orders-table th {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 2px solid #eee;
+    color: #666;
+    font-weight: 600;
+  }
+  
+  .orders-table td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+  }
+  
+  .status-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .status-badge.delivered {
+    background-color: #e3f2fd;
+    color: #4A90E2;
+  }
+  
+  .status-badge.processing {
+    background-color: #fff3e0;
+    color: #f5a623;
+  }
+  
+  .status-badge.pending {
+    background-color: #e8eaf6;
+    color: #7B8AB8;
+  }
+  
+  .status-badge.cancelled {
+    background-color: #ffebee;
+    color: #f44336;
+  }
+  
+  .action-btn {
+    padding: 4px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+    margin-right: 8px;
+    transition: all 0.2s;
+  }
+  
+  .action-btn:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* Dark mode styles */
+  .dark .orders-container {
+    background-color: #1a1a1a;
+  }
+  
+  .dark .orders-header h1,
+  .dark .chart-container h2 {
+    color: #fff;
+  }
+  
+  .dark .search-bar,
+  .dark .filter-btn,
+  .dark .export-btn,
+  .dark .chart-container,
+  .dark .orders-table-container {
+    background-color: #2d2d2d;
+    border-color: #404040;
+  }
+  
+  .dark .orders-table th {
+    color: #ccc;
+    border-bottom-color: #404040;
+  }
+  
+  .dark .orders-table td {
+    color: #fff;
+    border-bottom-color: #404040;
+  }
+  
+  .dark .action-btn {
+    background-color: #2d2d2d;
+    border-color: #404040;
+    color: #fff;
+  }
+  
+  .dark .action-btn:hover {
+    background-color: #3d3d3d;
+  }
