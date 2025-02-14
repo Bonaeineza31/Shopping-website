@@ -13,7 +13,7 @@ import {
   Legend 
 } from 'recharts';
 import { Download, Filter, Search } from 'lucide-react';
-import './orders.css';
+import './dashboard-styles/order.css';
 
 const COLORS = ["#4A90E2", "#7B8AB8", "#A0A6BF", "#C3C8D5", "#6E7F80"];
 
