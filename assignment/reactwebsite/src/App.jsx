@@ -18,6 +18,9 @@ import Newproduct from "./Dashboard/Newproduct";
 import Inventory from './Dashboard/Inventory.jsx'
 import Order from './Dashboard/Order.jsx'
 import Shipping from './Dashboard/Shipping.jsx'
+import Return from './Dashboard/Return.jsx'
+import CustomerList from './Dashboard/Customerlist.jsx'
+import Review from './Dashboard/Review.jsx'
 
 
 
@@ -46,6 +49,9 @@ function App() {
             <Route path="/inventory" element={<Inventory />} />
             <Route path="/order" element={<Order />} />
             <Route path="/shipping" element={<Shipping />} />
+            <Route path="/return" element={<Return />} />
+            <Route path="/customerlist" element={<CustomerList />} />
+            <Route path="/review" element={<Review />} />
           </Route>
 
         </Routes>

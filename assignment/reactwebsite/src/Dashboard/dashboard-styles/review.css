@@ -1,0 +1,123 @@
+.rv-container {
+    padding: 20px;
+    color: #333;
+  }
+  
+  /* Header Section */
+  .rv-header {
+    margin-bottom: 30px;
+  }
+  
+  .rv-header h2 {
+    color: #4A90E2;
+    margin-bottom: 20px;
+  }
+  
+  /* Stats Cards */
+  .rv-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .rv-stat-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #C3C8D5;
+  }
+  
+  .rv-stat-card h3 {
+    color: #7B8AB8;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+  
+  .rv-stat-card p {
+    color: #4A90E2;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  /* Chart Container */
+  .rv-chart-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    border: 1px solid #C3C8D5;
+  }
+  
+  .rv-chart-container h3 {
+    color: #7B8AB8;
+    margin-bottom: 20px;
+  }
+  
+  /* Reviews List */
+  .rv-reviews-list {
+    display: grid;
+    gap: 20px;
+  }
+  
+  .rv-review-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #C3C8D5;
+  }
+  
+  .rv-review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .rv-review-header h4 {
+    color: #4A90E2;
+    margin: 0;
+  }
+  
+  .rv-product-name {
+    color: #7B8AB8;
+    font-size: 0.9rem;
+  }
+  
+  .rv-rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .rv-stars {
+    color: #4A90E2;
+    letter-spacing: 2px;
+  }
+  
+  .rv-date {
+    color: #A0A6BF;
+    font-size: 0.9rem;
+  }
+  
+  .rv-comment {
+    color: #6E7F80;
+    margin: 0;
+    line-height: 1.5;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .rv-container {
+      padding: 10px;
+    }
+    
+    .rv-stats {
+      grid-template-columns: 1fr;
+    }
+  }

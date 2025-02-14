@@ -120,7 +120,7 @@ const Sidebar = () => {
               <Truck size={20} />
               <span>Shipping</span>
             </a>
-            <a href="/returns" className="submenu-item">
+            <a href="/return" className="submenu-item">
               <RefreshCw size={20} />
               <span>Returns</span>
             </a>
@@ -137,11 +137,11 @@ const Sidebar = () => {
         </div>
         {activeMenu === 'customers' && (
           <div className="nav-submenu">
-            <a href="/customer-list" className="submenu-item">
+            <a href="/customerlist" className="submenu-item">
               <User size={20} />
               <span>Customer List</span>
             </a>
-            <a href="/reviews" className="submenu-item">
+            <a href="/review" className="submenu-item">
               <MessageSquare size={20} />
               <span>Reviews</span>
             </a>

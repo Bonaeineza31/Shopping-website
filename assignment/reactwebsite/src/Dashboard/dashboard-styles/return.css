@@ -1,0 +1,144 @@
+.ret-container {
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.ret-container > * + * {
+  margin-top: 1.5rem;
+}
+
+.ret-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ret-header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.ret-header-icons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.ret-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.ret-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .ret-summary-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.ret-stat-card, .ret-chart-card, .ret-table-card {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.ret-stat-header, .ret-chart-header, .ret-table-header {
+  padding: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.ret-stat-content, .ret-chart-content, .ret-table-content {
+  padding: 1rem;
+}
+
+.ret-metric {
+  font-size: 1.875rem;
+  font-weight: 700;
+}
+
+.ret-metric-subtitle {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.ret-charts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .ret-charts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.ret-table-container {
+  overflow-x: auto;
+}
+
+.ret-table-container table {
+  width: 100%;
+}
+
+.ret-table-container th {
+  padding: 0.5rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ret-table-container td {
+  padding: 0.5rem;
+}
+
+.ret-table-container tr {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.ret-table-container tr:hover {
+  background-color: #f9fafb;
+}
+
+.ret-sort-header {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.ret-sort-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.ret-status-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+}
+
+.ret-status-badge.approved {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.ret-status-badge.pending {
+  background-color: #fef9c3;
+  color: #854d0e;
+}
+
+.ret-status-badge.processing {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.ret-status-badge.completed {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
