@@ -21,6 +21,7 @@ import Shipping from './Dashboard/Shipping.jsx'
 import Return from './Dashboard/Return.jsx'
 import CustomerList from './Dashboard/Customerlist.jsx'
 import Review from './Dashboard/Review.jsx'
+import SalesAnalytics from './Dashboard/SalesAnalytics.jsx'
 
 
 
@@ -52,6 +53,7 @@ function App() {
             <Route path="/return" element={<Return />} />
             <Route path="/customerlist" element={<CustomerList />} />
             <Route path="/review" element={<Review />} />
+            <Route path="/sales" element={<SalesAnalytics />} />
           </Route>
 
         </Routes>

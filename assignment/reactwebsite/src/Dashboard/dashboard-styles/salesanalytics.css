@@ -1,0 +1,109 @@
+.sa-container {
+    padding: 1.5rem;
+    width: 100%;
+  }
+  
+  .sa-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .sa-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #4A90E2;
+  }
+  
+  .sa-period-select {
+    padding: 0.5rem;
+    border: 1px solid #C3C8D5;
+    border-radius: 0.375rem;
+    background-color: white;
+    color: #6E7F80;
+  }
+  
+  .sa-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .sa-metric-card {
+    background-color: white;
+    border: 1px solid #C3C8D5;
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+  }
+  
+  .sa-metric-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .sa-metric-header h3 {
+    font-size: 1rem;
+    color: #7B8AB8;
+    margin: 0;
+  }
+  
+  .sa-trend-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  
+  .sa-trend-icon.up {
+    color: #10B981;
+  }
+  
+  .sa-trend-icon.down {
+    color: #EF4444;
+  }
+  
+  .sa-metric-value {
+    font-size: 1.875rem;
+    font-weight: 600;
+    color: #4A90E2;
+    margin-bottom: 0.5rem;
+  }
+  
+  .sa-metric-trend {
+    font-size: 0.875rem;
+  }
+  
+  .sa-metric-trend.positive {
+    color: #10B981;
+  }
+  
+  .sa-metric-trend.negative {
+    color: #EF4444;
+  }
+  
+  .sa-charts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  @media (min-width: 1024px) {
+    .sa-charts-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  .sa-chart-card {
+    background-color: white;
+    border: 1px solid #C3C8D5;
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+  }
+  
+  .sa-chart-card h3 {
+    font-size: 1rem;
+    color: #7B8AB8;
+    margin-bottom: 1rem;
+  }
