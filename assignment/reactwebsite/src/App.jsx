@@ -17,14 +17,7 @@ import { ThemeProvider } from './Dashboard/Theme';
 import Newproduct from "./Dashboard/Newproduct";
 import Inventory from './Dashboard/Inventory.jsx'
 import Order from './Dashboard/Order.jsx'
-
-
-
-
-
-
-
-
+import Shipping from './Dashboard/Shipping.jsx'
 
 
 
@@ -52,6 +45,7 @@ function App() {
             <Route path="/newproduct" element={<Newproduct />} />
             <Route path="/inventory" element={<Inventory />} />
             <Route path="/order" element={<Order />} />
+            <Route path="/shipping" element={<Shipping />} />
           </Route>
 
         </Routes>
