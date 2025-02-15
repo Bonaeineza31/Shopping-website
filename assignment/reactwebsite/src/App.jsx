@@ -24,6 +24,7 @@ import Review from './Dashboard/Review.jsx'
 import SalesAnalytics from './Dashboard/SalesAnalytics.jsx'
 import Traffic from './Dashboard/Traffic.jsx'
 import Message from './Dashboard/Message.jsx'
+import Notification from './Dashboard/Notification.jsx'
 
 
 
@@ -58,6 +59,7 @@ function App() {
             <Route path="/sales" element={<SalesAnalytics />} />
             <Route path="/traffic" element={<Traffic/>} />
             <Route path="/messages" element={<Message/>} />
+            <Route path="/notifications" element={<Notification/>} />
           </Route>
 
         </Routes>

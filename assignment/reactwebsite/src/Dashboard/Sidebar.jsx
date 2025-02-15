@@ -10,7 +10,6 @@ import {
   Mail,
   Settings,
   Package,
-  Heart,
   CheckSquare,
   MessageSquare,
   FileText,
@@ -95,10 +94,6 @@ const Sidebar = () => {
               <Box size={20} />
               <span>Inventory</span>
             </a>
-            <a href="/categories" className="submenu-item">
-              <RefreshCw size={20} />
-              <span>Categories</span>
-            </a>
           </div>
         )}
 
@@ -144,10 +139,6 @@ const Sidebar = () => {
             <a href="/review" className="submenu-item">
               <MessageSquare size={20} />
               <span>Reviews</span>
-            </a>
-            <a href="/wishlist" className="submenu-item">
-              <Heart size={20} />
-              <span>Wishlists</span>
             </a>
           </div>
         )}
