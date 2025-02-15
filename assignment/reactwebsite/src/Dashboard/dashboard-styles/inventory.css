@@ -110,12 +110,12 @@
   }
   
   .status-badge.stock {
-    background: #065f46;
+    background: #4c5f8d;
     color: #ffffff;
   }
   
   .status-badge.sold {
-    background: #991b1b;
+    background: #6E7F80;
     color: #ffffff;
   }
   
@@ -148,19 +148,19 @@
   }
   
   .edit-btn {
-    background: #1e40af;
+    background: #4A90E2;
   }
   
   .delete-btn {
-    background: #991b1b;
+    background: #7B8AB8;
   }
   
   .edit-btn:hover {
-    background: #1e3a8a;
+    background: #4A90E2;
   }
   
   .delete-btn:hover {
-    background: #7f1d1d;
+    background: #7B8AB8;
   }
   
   /* Row hover effect */

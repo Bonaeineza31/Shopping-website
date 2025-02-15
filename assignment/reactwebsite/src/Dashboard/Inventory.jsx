@@ -23,7 +23,6 @@ const Inventory = () => {
       pics: 32,
       price: 39,
       status: "Stock",
-      colors: ["#22c55e", "#dc2626", "#1e40af", "#4b5563", "#eab308"],
       image: appleWatch
     },
     {
@@ -34,7 +33,6 @@ const Inventory = () => {
       pics: 24,
       price: 49,
       status: "Stock",
-      colors: ["#22c55e", "#dc2626", "#1e40af", "#4b5563", "#eab308"],
       image: bataShoes
     },
     {
@@ -45,7 +43,6 @@ const Inventory = () => {
       pics: 32,
       price: 39,
       status: "Stock",
-      colors: ["#22c55e", "#dc2626", "#1e40af", "#4b5563", "#eab308"],
       image: bestLookChair
     },
     {
@@ -56,7 +53,7 @@ const Inventory = () => {
       pics: 6,
       price: 20,
       status: "Stock",
-      colors: ["#22c55e", "#1e40af", "#eab308"],
+      
       image: brownChair
     },
     {
@@ -67,7 +64,7 @@ const Inventory = () => {
       pics: 8,
       price: 49,
       status: "Stock",
-      colors: ["#22c55e", "#1e40af"],
+      
       image: coscoVolleyball
     },
     {
@@ -78,7 +75,6 @@ const Inventory = () => {
       pics: 10,
       price: 99,
       status: "Sold",
-      colors: ["#22c55e", "#dc2626", "#1e40af"],
       image: greenChair
     },
     {
@@ -89,7 +85,6 @@ const Inventory = () => {
       pics: 32,
       price: 39,
       status: "Stock",
-      colors: ["#22c55e", "#dc2626", "#1e40af", "#4b5563", "#eab308"],
       image: importantChair
     },
     {
@@ -100,7 +95,6 @@ const Inventory = () => {
       pics: 32,
       price: 39,
       status: "Stock",
-      colors: ["#22c55e", "#dc2626", "#1e40af", "#4b5563", "#eab308"],
       image: laviePurse
     }
   ];
@@ -137,7 +131,6 @@ const Inventory = () => {
             <th>Pics</th>
             <th>Price</th>
             <th>Status</th>
-            <th>Avail.Color</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -158,17 +151,6 @@ const Inventory = () => {
                 <span className={`status-badge ${product.status.toLowerCase()}`}>
                   {product.status}
                 </span>
-              </td>
-              <td>
-                <div className="color-dots">
-                  {product.colors.map((color, index) => (
-                    <span 
-                      key={index} 
-                      className="color-dot" 
-                      style={{ backgroundColor: color }}
-                    />
-                  ))}
-                </div>
               </td>
               <td>
                 <div className="action-buttons">
