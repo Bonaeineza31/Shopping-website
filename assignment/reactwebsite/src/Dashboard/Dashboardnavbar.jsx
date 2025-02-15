@@ -102,48 +102,6 @@ const DashboardNavbar = ({ toggleSidebar, isSidebarOpen }) => {
                         </div>
                     )}
                 </div>
-
-                <div className="notification-container">
-                    <button 
-                        className="notification-button"
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            setShowNotifications(!showNotifications);
-                            setShowProfile(false);
-                            setShowLanguages(false);
-                        }}
-                    >
-                        <Bell size={20} />
-                        <span className="notification-badge">2</span>
-                    </button>
-
-                    {showNotifications && (
-                        <div className="notification-dropdown">
-                            <div className="notification-header">
-                                <span>Notifications</span>
-                                <span className="badge">2</span>
-                            </div>
-                            <div className="notification-list">
-                                {/* Notification items */}
-                                <div className="notification-item">
-                                    <div className="notification-icon blue">
-                                        <span className="icon">🛒</span>
-                                    </div>
-                                    <div className="notification-content">
-                                        <p>Your order is placed</p>
-                                        <span className="time">2 min ago</span>
-                                        <p className="description">Dummy text of the printing...</p>
-                                    </div>
-                                </div>
-                                {/* Add more notification items as needed */}
-                            </div>
-                            <div className="notification-footer">
-                                <a href="#" className="view-all">View all</a>
-                            </div>
-                        </div>
-                    )}
-                </div>
-
                 <div className="profile-container">
                     <button 
                         className="profile-button"

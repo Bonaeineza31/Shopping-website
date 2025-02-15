@@ -9,66 +9,68 @@
     z-index: 1000;
     display: flex;
     align-items: center;
-    padding: 40px;
-  }
-  
-  .navbar-left {
+    padding: 0 40px;
+}
+
+.navbar-left {
     display: flex;
     align-items: center;
     gap: 1.5rem;
-  }
-  
+}
 
-  
-  .logo-container {
+.logo-container {
     display: flex;
     align-items: center;
-  }
-  
-  .logo-text {
+    text-decoration: none; /* Added for Link component */
+}
+
+.logo-text {
     font-size: 1.5rem;
     font-weight: 600;
     color: #4c6fff;
     margin: 0;
-  }
-  
-  .search-container {
+}
+
+.search-container {
     position: relative;
     width: 300px;
-    margin-left: 300px;
-  }
-  
-  .search-input {
+    margin-left: 40px; /* Reduced from 300px for better spacing */
+}
+
+.search-input {
     width: 100%;
     padding: 0.75rem 1rem 0.75rem 2.5rem;
     border: 1px solid #eef2f7;
     border-radius: 30px;
     background: #f8f9fc;
     font-size: 0.9rem;
-  }
-  
-  .search-icon {
+    outline: none; /* Added for better focus state */
+}
+
+.search-input:focus {
+    border-color: #4c6fff;
+    box-shadow: 0 0 0 2px rgba(76, 111, 255, 0.1);
+}
+
+.search-icon {
     position: absolute;
     left: 1rem;
     top: 50%;
     transform: translateY(-50%);
     color: #8492a6;
-  }
-  
-  .navbar-right {
+    pointer-events: none; /* Added to prevent icon interference */
+}
+
+.navbar-right {
     display: flex;
     align-items: center;
     gap: 1.5rem;
     margin-left: auto;
-  }
-  
+}
+
+/* Language Selector Styles */
 .language-selector {
     position: relative;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    cursor: pointer;
-    color: #4b4b4b;
 }
 
 .selected-language {
@@ -78,6 +80,7 @@
     cursor: pointer;
     padding: 0.5rem;
     border-radius: 4px;
+    transition: background-color 0.2s;
 }
 
 .selected-language:hover {
@@ -88,18 +91,19 @@
     width: 20px;
     height: 15px;
     object-fit: cover;
+    border-radius: 2px;
 }
 
 .language-dropdown {
     position: absolute;
-    top: 100%;
+    top: calc(100% + 0.5rem);
     right: 0;
-    margin-top: 0.5rem;
     background: white;
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
     width: 160px;
-    z-index: 1000;
+    z-index: 1001; /* Increased to ensure dropdown appears above other elements */
+    overflow: hidden;
 }
 
 .language-option {
@@ -115,6 +119,7 @@
     background: #f8f9fc;
 }
 
+/* Notification Styles */
 .notification-container {
     position: relative;
 }
@@ -125,12 +130,21 @@
     cursor: pointer;
     position: relative;
     color: #4b4b4b;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+}
+
+.notification-button:hover {
+    color: #4c6fff;
 }
 
 .notification-badge {
     position: absolute;
-    top: -5px;
-    right: -5px;
+    top: -2px;
+    right: -2px;
     background: #ff5c75;
     color: white;
     border-radius: 50%;
@@ -144,14 +158,13 @@
 
 .notification-dropdown {
     position: absolute;
-    top: 100%;
+    top: calc(100% + 0.5rem);
     right: -10px;
-    margin-top: 1rem;
     background: white;
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
     width: 320px;
-    z-index: 1000;
+    z-index: 1001; /* Increased to match other dropdowns */
 }
 
 .notification-header {
@@ -180,6 +193,11 @@
     padding: 1rem;
     border-bottom: 1px solid #eef2f7;
     gap: 1rem;
+    transition: background-color 0.2s;
+}
+
+.notification-item:hover {
+    background: #f8f9fc;
 }
 
 .notification-icon {
@@ -192,20 +210,9 @@
     flex-shrink: 0;
 }
 
-.notification-icon.blue {
-    background: #4c6fff;
-    color: white;
-}
-
-.notification-icon.green {
-    background: #2ec771;
-    color: white;
-}
-
-.notification-icon.pink {
-    background: #ff5c75;
-    color: white;
-}
+.notification-icon.blue { background: #4c6fff; color: white; }
+.notification-icon.green { background: #2ec771; color: white; }
+.notification-icon.pink { background: #ff5c75; color: white; }
 
 .notification-content {
     flex: 1;
@@ -219,6 +226,7 @@
 .notification-content .time {
     color: #8492a6;
     font-size: 0.8rem;
+    margin-top: 0.25rem;
 }
 
 .notification-content .description {
@@ -239,6 +247,7 @@
     font-size: 0.9rem;
 }
 
+/* Profile Styles */
 .profile-container {
     position: relative;
 }
@@ -251,6 +260,12 @@
     border: none;
     cursor: pointer;
     padding: 0.5rem;
+    transition: background-color 0.2s;
+    border-radius: 4px;
+}
+
+.profile-button:hover {
+    background: #f8f9fc;
 }
 
 .profile-image {
@@ -266,14 +281,14 @@
 
 .profile-dropdown {
     position: absolute;
-    top: 100%;
+    top: calc(100% + 0.5rem);
     right: 0;
-    margin-top: 1rem;
     background: white;
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
     width: 220px;
-    z-index: 1000;
+    z-index: 1001;
+    overflow: hidden;
 }
 
 .profile-header {
