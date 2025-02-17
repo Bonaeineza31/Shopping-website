@@ -1,5 +1,4 @@
-/* General Dashboard Styling */
-.dashboard-wrapper {
+.admin-dash-wrapper {
   padding: 2rem;
   background-color: #f3f4f6;
   min-height: 100vh;
@@ -9,8 +8,7 @@
   margin-right: -20px;
 }
 
-/* Metrics Grid */
-.metrics-grid {
+.admin-metrics-grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 1.5rem;
@@ -18,19 +16,18 @@
 }
 
 @media (min-width: 768px) {
-  .metrics-grid {
+  .admin-metrics-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 1024px) {
-  .metrics-grid {
+  .admin-metrics-grid {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
-/* Metric Cards */
-.metric-card {
+.admin-metric-card {
   background-color: white;
   border-radius: 0.75rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -38,72 +35,68 @@
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-.metric-card:hover {
+.admin-metric-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Metric Content */
-.metric-content {
+.admin-metric-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.metric-info {
+.admin-metric-info {
   flex: 1;
 }
 
-.metric-label {
+.admin-metric-label {
   color: #6b7280;
   font-size: 0.875rem;
   margin-bottom: 0.25rem;
   font-weight: 500;
 }
 
-.metric-value {
+.admin-metric-value {
   font-size: 1.75rem;
   font-weight: 700;
   margin: 0.25rem 0;
   color: #111827;
 }
 
-.metric-change {
+.admin-metric-change {
   font-size: 0.875rem;
   font-weight: 600;
 }
 
-.metric-change.positive {
+.admin-metric-change.positive {
   color: #10b981;
 }
 
-.metric-change.negative {
+.admin-metric-change.negative {
   color: #ef4444;
 }
 
-.metric-icon {
+.admin-metric-icon {
   width: 3rem;
   height: 3rem;
-  color: #d1d5db;
+  color: #4A90E2;
 }
 
-
-.charts-grid {
+.admin-charts-grid {
   display: grid;
-  grid-template-columns: 1fr;  
+  grid-template-columns: 1fr;
   gap: 1.5rem;
   width: 100%;
 }
 
-
 @media (min-width: 1024px) {
-  .charts-grid {
+  .admin-charts-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Chart Cards */
-.chart-card {
+.admin-chart-card {
   background-color: white;
   border-radius: 0.75rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -111,42 +104,18 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: stretch;  /* Ensures content stretches */
+  align-items: stretch;
   justify-content: center;
 }
 
-.chart-card:hover {
+.admin-chart-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-.chart-title {
+.admin-chart-title {
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 1rem;
   color: #1f2937;
-}
-.chart-container {
-  width: 100% !important;
-  height: auto;
-}
-
-/* Sidebar & Main Content */
-.main-content {
-  margin-left: 0;
-  transition: margin-left 0.3s ease-in-out;
-}
-
-.main-content.sidebar-open {
-  margin-left: 260px;
-}
-
-@media (min-width: 1024px) {
-  .sidebar {
-    transform: translateX(0);
-  }
-
-  .main-content {
-    margin-left: 260px;
-  }
 }

@@ -1,179 +1,175 @@
 import React from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell, BarChart, Bar } from 'recharts';
-import { Users, Clock, TrendingUp, Target } from 'lucide-react';
-
+import { ShoppingBag, Users, Star, Heart, BarChart2, Mail, Shield } from 'lucide-react';
 import './dashboard-styles/dashboardview.css'
 
+// Color constants
+const COLORS = ["#4A90E2", "#7B8AB8", "#A0A6BF", "#C3C8D5", "#6E7F80"];
 
 // Sample data
-const COLORS = ["#4A90E2", "#7B8AB8", "#A0A6BF", "#C3C8D5", "#6E7F80"];
-const paymentData = [
-  { method: 'Credit Card', percentage: 45 },
-  { method: 'PayPal', percentage: 25 },
-  { method: 'Mobile Money', percentage: 20 },
-  { method: 'Cash on Delivery', percentage: 10 },
-];
-const visitData = [
-  { time: '00:00', newVisits: 30, uniqueVisits: 45 },
-  { time: '03:00', newVisits: 45, uniqueVisits: 60 },
-  { time: '06:00', newVisits: 75, uniqueVisits: 90 },
-  { time: '09:00', newVisits: 85, uniqueVisits: 120 },
-  { time: '12:00', newVisits: 120, uniqueVisits: 180 },
-  { time: '15:00', newVisits: 180, uniqueVisits: 220 },
-  { time: '18:00', newVisits: 150, uniqueVisits: 200 },
-  { time: '21:00', newVisits: 100, uniqueVisits: 150 },
+const orderData = [
+  { month: 'Jan', orders: 1200, shipping: 980 },
+  { month: 'Feb', orders: 1800, shipping: 1400 },
+  { month: 'Mar', orders: 1600, shipping: 1300 },
+  { month: 'Apr', orders: 2100, shipping: 1800 },
+  { month: 'May', orders: 1900, shipping: 1600 }
 ];
 
-const deviceData = [
-  { name: 'Desktop', value: 45 },
-  { name: 'Mobile', value: 35 },
-  { name: 'Tablet', value: 20 },
+const customerSegments = [
+  { segment: 'New', value: 30 },
+  { segment: 'Returning', value: 45 },
+  { segment: 'VIP', value: 25 }
 ];
 
-const channelData = [
-  { name: 'Email', value: 1200 },
-  { name: 'Referral', value: 2100 },
-  { name: 'Organic', value: 1500 },
-  { name: 'Direct', value: 1800 },
-  { name: 'Campaign', value: 2400 },
+const reviewStats = [
+  { rating: '5 stars', count: 450 },
+  { rating: '4 stars', count: 320 },
+  { rating: '3 stars', count: 180 },
+  { rating: '2 stars', count: 80 },
+  { rating: '1 star', count: 40 }
 ];
 
-// const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8'];
+const communicationStats = [
+  { channel: 'Email', count: 2800 },
+  { channel: 'Chat', count: 1200 },
+  { channel: 'Phone', count: 800 }
+];
 
-const DashboardView = () => {
+const DashboardView= () => {
   return (
-    <div className="dashboard-wrapper">
-      {/* Metrics Cards */}
-      <div className="metrics-grid">
-        <div className="metric-card">
-          <div className="metric-content">
-            <div className="metric-info">
-              <p className="metric-label">Sessions</p>
-              <h3 className="metric-value">24k</h3>
-              <p className="metric-change positive">↑ 8.5% New Sessions Today</p>
+    <div className="admin-dash-wrapper">
+      {/* Summary Metrics Row */}
+      <div className="admin-metrics-grid">
+        <div className="admin-metric-card">
+          <div className="admin-metric-content">
+            <div className="admin-metric-info">
+              <p className="admin-metric-label">Total Orders</p>
+              <h3 className="admin-metric-value">8,642</h3>
+              <p className="admin-metric-change positive">↑ 12.5% vs last month</p>
             </div>
-            <Users className="metric-icon" />
+            <ShoppingBag className="admin-metric-icon" />
           </div>
         </div>
 
-        <div className="metric-card">
-          <div className="metric-content">
-            <div className="metric-info">
-              <p className="metric-label">Avg. Sessions</p>
-              <h3 className="metric-value">00:18</h3>
-              <p className="metric-change positive">↑ 1.5% Weekly Avg.</p>
+        <div className="admin-metric-card">
+          <div className="admin-metric-content">
+            <div className="admin-metric-info">
+              <p className="admin-metric-label">Active Customers</p>
+              <h3 className="admin-metric-value">15.2k</h3>
+              <p className="admin-metric-change positive">↑ 8.3% vs last month</p>
             </div>
-            <Clock className="metric-icon" />
+            <Users className="admin-metric-icon" />
           </div>
         </div>
 
-        <div className="metric-card">
-          <div className="metric-content">
-            <div className="metric-info">
-              <p className="metric-label">Bounce Rate</p>
-              <h3 className="metric-value">$2400</h3>
-              <p className="metric-change negative">↓ 35% Weekly Rate</p>
+        <div className="admin-metric-card">
+          <div className="admin-metric-content">
+            <div className="admin-metric-info">
+              <p className="admin-metric-label">Average Rating</p>
+              <h3 className="admin-metric-value">4.6/5</h3>
+              <p className="admin-metric-change positive">↑ 0.2 vs last month</p>
             </div>
-            <TrendingUp className="metric-icon" />
+            <Star className="admin-metric-icon" />
           </div>
         </div>
 
-        <div className="metric-card">
-          <div className="metric-content">
-            <div className="metric-info">
-              <p className="metric-label">Goal Completions</p>
-              <h3 className="metric-value">85000</h3>
-              <p className="metric-change positive">↑ 10.5% Weekly</p>
+        <div className="admin-metric-card">
+          <div className="admin-metric-content">
+            <div className="admin-metric-info">
+              <p className="admin-metric-label">Security Status</p>
+              <h3 className="admin-metric-value">Strong</h3>
+              <p className="admin-metric-change positive">All systems secure</p>
             </div>
-            <Target className="metric-icon" />
+            <Shield className="admin-metric-icon" />
           </div>
         </div>
       </div>
 
       {/* Charts Grid */}
-      <div className="charts-grid">
-        {/* Audience Overview */}
-        <div className="chart-card">
-  <h3 className="chart-title">Audience Overview</h3>
-  <ResponsiveContainer width="100%" height={300}>
-    <LineChart data={visitData}>
-      <CartesianGrid strokeDasharray="3 3" stroke="#E0E0E0" />
-      <XAxis dataKey="time" stroke="#7B8AB8" />
-      <YAxis stroke="#7B8AB8" />
-      <Tooltip />
-      <Legend />
-      <Line type="monotone" dataKey="newVisits" stroke="#4A90E2" name="New Visits" />
-      <Line type="monotone" dataKey="uniqueVisits" stroke="#7B8AB8" name="Unique Visits" />
-    </LineChart>
-  </ResponsiveContainer>
-</div>
+      <div className="admin-charts-grid">
+        {/* Orders & Shipping Trends */}
+        <div className="admin-chart-card">
+          <h3 className="admin-chart-title">Orders & Shipping Overview</h3>
+          <ResponsiveContainer width="100%" height={300}>
+            <LineChart data={orderData}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#E0E0E0" />
+              <XAxis dataKey="month" stroke="#7B8AB8" />
+              <YAxis stroke="#7B8AB8" />
+              <Tooltip />
+              <Legend />
+              <Line type="monotone" dataKey="orders" stroke="#4A90E2" name="Orders" />
+              <Line type="monotone" dataKey="shipping" stroke="#7B8AB8" name="Shipped" />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
 
-{/* Sessions by Device */}
-<div className="chart-card">
-  <h3 className="chart-title">Sessions by Device</h3>
-  <ResponsiveContainer width="100%" height={300}>
-    <PieChart>
-      <Pie
-        data={deviceData}
-        cx="50%"
-        cy="50%"
-        innerRadius={60}
-        outerRadius={80}
-        fill="#4A90E2"
-        paddingAngle={5}
-        dataKey="value"
-        label
-      >
-        {deviceData.map((entry, index) => (
-          <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-        ))}
-      </Pie>
-      <Tooltip />
-      <Legend />
-    </PieChart>
-  </ResponsiveContainer>
-</div>
+        {/* Customer Segments */}
+        <div className="admin-chart-card">
+          <h3 className="admin-chart-title">Customer Segments</h3>
+          <ResponsiveContainer width="100%" height={300}>
+            <PieChart>
+              <Pie
+                data={customerSegments}
+                cx="50%"
+                cy="50%"
+                innerRadius={60}
+                outerRadius={80}
+                fill="#4A90E2"
+                paddingAngle={5}
+                dataKey="value"
+                label
+              >
+                {customerSegments.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                ))}
+              </Pie>
+              <Tooltip />
+              <Legend />
+            </PieChart>
+          </ResponsiveContainer>
+        </div>
 
-{/* Sessions by Channel */}
-<div className="chart-card">
-  <h3 className="chart-title">Sessions by Channel</h3>
-  <ResponsiveContainer width="100%" height={300}>
-    <BarChart data={channelData}>
-      <CartesianGrid strokeDasharray="3 3" stroke="#E0E0E0" />
-      <XAxis dataKey="name" stroke="#7B8AB8" />
-      <YAxis stroke="#7B8AB8" />
-      <Tooltip />
-      <Bar dataKey="value" fill="#4A90E2">
-        {channelData.map((entry, index) => (
-          <Cell key={index} fill={COLORS[index % COLORS.length]} />
-        ))}
-      </Bar>
-    </BarChart>
-  </ResponsiveContainer>
-</div>
+        {/* Review Distribution */}
+        <div className="admin-chart-card">
+          <h3 className="admin-chart-title">Review Distribution</h3>
+          <ResponsiveContainer width="100%" height={300}>
+            <BarChart data={reviewStats}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#E0E0E0" />
+              <XAxis dataKey="rating" stroke="#7B8AB8" />
+              <YAxis stroke="#7B8AB8" />
+              <Tooltip />
+              <Bar dataKey="count" fill="#4A90E2">
+                {reviewStats.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                ))}
+              </Bar>
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
 
-        {/* Sessions by Channel */}
-        <div className="chart-card">
-          <h3>Session by Payment</h3>
-        <ResponsiveContainer width="100%" height={300}>
-      <PieChart>
-        <Pie
-          data={paymentData}
-          dataKey="percentage"
-          nameKey="method"
-          cx="50%"
-          cy="50%"
-          outerRadius={100}
-          label
-        >
-          {paymentData.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-          ))}
-        </Pie>
-        <Tooltip />
-        <Legend />
-      </PieChart>
-    </ResponsiveContainer>
+        {/* Communication Channels */}
+        <div className="admin-chart-card">
+          <h3 className="admin-chart-title">Communication Channels</h3>
+          <ResponsiveContainer width="100%" height={300}>
+            <PieChart>
+              <Pie
+                data={communicationStats}
+                dataKey="count"
+                nameKey="channel"
+                cx="50%"
+                cy="50%"
+                outerRadius={80}
+                fill="#4A90E2"
+                label
+              >
+                {communicationStats.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                ))}
+              </Pie>
+              <Tooltip />
+              <Legend />
+            </PieChart>
+          </ResponsiveContainer>
         </div>
       </div>
     </div>
