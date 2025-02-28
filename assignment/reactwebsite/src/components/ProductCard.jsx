@@ -3,9 +3,8 @@ import { X, Search } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import '../styles/productcard.css';
 import { useNavigate } from 'react-router-dom';
-import {newProducts} from './Home';
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, index, className }) => {
   const [showQuickView, setShowQuickView] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const [isHovered, setIsHovered] = useState(false);
@@ -13,11 +12,10 @@ const ProductCard = ({ product }) => {
 
   // If product is undefined, return early
   if (!product) {
-    return <div className="product-card">Product not available</div>;
+    return <div className={className || "product-item"}>Product not available</div>;
   }
 
   const handleNavigate = () => {
-    // If product.id is not defined, prevent navigation
     if (product.id) {
       navigate(`/product/${product.id}`);
     }
@@ -26,28 +24,44 @@ const ProductCard = ({ product }) => {
   const incrementQuantity = () => setQuantity((prev) => prev + 1);
   const decrementQuantity = () => setQuantity((prev) => Math.max(1, prev - 1));
 
+  // Format price correctly
+  const formatPrice = () => {
+    if (!product.price) return '$0.00';
+    
+    if (typeof product.price === 'object' && product.price.from && product.price.to) {
+      return `$${product.price.from.toFixed(2)} - $${product.price.to.toFixed(2)}`;
+    }
+    
+    if (typeof product.price === 'number') {
+      return `$${product.price.toFixed(2)}`;
+    }
+    
+    return `$${product.price}`;
+  };
+
   return (
     <>
       <div
-        className="product-card"
+        className={className || `product-item product-item-${index}`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <div className="product-image-container">
-          {/* Fallback for missing image */}
+        <div className="product2-image-container">
           <img
             src={product.image || '/path/to/placeholder/image.jpg'}
             alt={product.name || 'Product'}
             className="product-image"
           />
           {isHovered && (
-            <div className="hover-buttons">
-              <Link to={`/product/${product.id}`} className="hover-button">
+            <div className="hover-overlay">
+              <button 
+                className="overlay-button"
+                onClick={handleNavigate}
+              >
                 SELECT OPTIONS
-              </Link>
-
+              </button>
               <button
-                className="hover-button"
+                className="overlay-button"
                 onClick={() => setShowQuickView(true)}
               >
                 QUICK VIEW
@@ -55,6 +69,8 @@ const ProductCard = ({ product }) => {
             </div>
           )}
         </div>
+        <h3 className="product-name">{product.name}</h3>
+        <p className="product-price">{formatPrice()}</p>
       </div>
 
       {/* Quick View Modal */}
@@ -69,9 +85,9 @@ const ProductCard = ({ product }) => {
             </button>
 
             <div className="modal-content">
+              {/* Modal content remains the same */}
               <div className="modal-left">
                 <div className="main-image-container">
-                  {/* Fallback for missing image */}
                   <img
                     src={product.image || '/path/to/placeholder/image.jpg'}
                     alt={product.name || 'Product'}
@@ -82,16 +98,15 @@ const ProductCard = ({ product }) => {
                   </button>
                 </div>
                 <div className="thumbnail-strip">
-                  {/* Render thumbnails if available */}
                   {product.images?.length ? (
-                    product.images.map((imageData, index) => (
+                    product.images.map((imageData, idx) => (
                       <button
-                        key={index}
-                        className={`thumbnail ${index === 0 ? 'active' : ''}`}
+                        key={idx}
+                        className={`thumbnail ${idx === 0 ? 'active' : ''}`}
                       >
                         <img
                           src={imageData || '/path/to/placeholder/image.jpg'}
-                          alt={`Thumbnail ${index + 1}`}
+                          alt={`Thumbnail ${idx + 1}`}
                         />
                       </button>
                     ))
@@ -108,9 +123,7 @@ const ProductCard = ({ product }) => {
                   <span className="review-count">(1 customer review)</span>
                 </div>
                 <div className="price-range">
-                  {/* Fallback for missing price data */}
-                  ${product.price?.from?.toFixed(2) || '0.00'} –{' '}
-                  ${product.price?.to?.toFixed(2) || '0.00'}
+                  {formatPrice()}
                 </div>
 
                 <p className="product-description">
@@ -147,6 +160,7 @@ const ProductCard = ({ product }) => {
                 </div>
 
                 <div className="vendor-info">
+                  {/* Vendor info remains the same */}
                   <h3>Vendor</h3>
                   <div className="vendor-profile">
                     <img
