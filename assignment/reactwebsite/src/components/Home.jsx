@@ -107,25 +107,32 @@ const Home = () => {
   <div className="container">
     <h2 className="section-title">New Arrival Products</h2>
     <div className="products-grid">
-      {newProducts.map((product, index) => (
-        <div key={product.id} className={`product-item product-item-${index}`}>
-          <div className="product2-image-container">
-            <img src={product.image} alt={product.name} className="product-image" />
-            <div className="hover-overlay">
-              <button className="overlay-button">Quick View</button>
-              <button className="overlay-button">Add to Cart</button>
-            </div>
-          </div>
-          <h3 className="product-name">{product.name}</h3>
-          <p className="product-price">${product.price}</p>
+    {newProducts.map((product, index) => {
+  // Check if price is an object with from/to properties
+  const price = typeof product.price === 'object' && product.price.from && product.price.to 
+    ? `$${product.price.from} - $${product.price.to}`
+    : `$${product.price}`;
+    
+  return (
+    <div key={product.id || index} className={`product-item product-item-${index}`}>
+      <div className="product2-image-container">
+        <img src={product.image} alt={product.name} className="product-image" />
+        <div className="hover-overlay">
+          <button className="overlay-button">Quick View</button>
+          <button className="overlay-button">Add to Cart</button>
         </div>
-      ))}
+      </div>
+      <h3 className="product-name">{product.name}</h3>
+      <p className="product-price">{price}</p>
     </div>
+  );
+})}
+    </div>
+    <Link to="/Shop">
     <button className="shop-now-btn">SHOP NOW</button>
+          </Link> 
   </div>
 </section>
-
-
       {/* Vendor List */}
       <section className="vendor-list">
         <div className="container">
