@@ -165,13 +165,7 @@
   transform: translateY(-5px);
 }
 
-/* Allow custom styling for each individual product if needed */
-.product-item-0 { /* Custom styles for first product */ }
-.product-item-1 { /* Custom styles for second product */ }
-.product-item-2 { /* Custom styles for third product */ }
-/* Add more as needed */
 
-/* Product image container and hover effects */
 .product2-image-container {
   position: relative;
   overflow: hidden;
