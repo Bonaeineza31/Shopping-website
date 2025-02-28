@@ -126,6 +126,7 @@
 
 
 /* New Arrivals */
+/* Main section styles */
 .new-arrivals {
   padding: 4rem 0;
   background: #f9fafb;
@@ -138,32 +139,56 @@
   padding: 0 1rem;
 }
 
-.product2-grid {
+.section-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #1a1a1a;
+}
+
+/* Products grid layout */
+.products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
 
-.shop-now-btn {
-  background: #1a1a1a;
-  color: white;
-  padding: 0.75rem 2rem;
-  border-radius: 4px;
-  border: none;
-  margin-top: 2rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+/* Individual product styling */
+.product-item {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
 }
 
-.shop-now-btn:hover {
-  background: #333;
+.product-item:hover {
+  transform: translateY(-5px);
 }
 
+/* Allow custom styling for each individual product if needed */
+.product-item-0 { /* Custom styles for first product */ }
+.product-item-1 { /* Custom styles for second product */ }
+.product-item-2 { /* Custom styles for third product */ }
+/* Add more as needed */
 
+/* Product image container and hover effects */
 .product2-image-container {
   position: relative;
   overflow: hidden;
+  border-radius: 8px;
+  aspect-ratio: 3/4;
+  margin-bottom: 1rem;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product2-image-container:hover .product-image {
+  transform: scale(1.05);
 }
 
 .hover-overlay {
@@ -195,10 +220,81 @@
   width: 80%;
   max-width: 200px;
   transition: background-color 0.3s ease;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
 }
 
 .overlay-button:hover {
   background-color: #333;
+}
+
+/* Product text styling */
+.product-name {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin: 0.5rem 0;
+  color: #1a1a1a;
+}
+
+.product-price {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4a4a4a;
+}
+
+/* Shop now button */
+.shop-now-btn {
+  background: #1a1a1a;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 4px;
+  border: none;
+  margin: 2rem auto 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1rem;
+}
+
+.shop-now-btn:hover {
+  background: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+  
+  .product-name {
+    font-size: 1rem;
+  }
+  
+  .product-price {
+    font-size: 0.875rem;
+  }
+  
+  .overlay-button {
+    padding: 8px 16px;
+    font-size: 0.75rem;
+  }
 }
 
 /* Vendor List */

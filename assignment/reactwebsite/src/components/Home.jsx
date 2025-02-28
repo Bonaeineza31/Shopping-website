@@ -103,22 +103,27 @@ const Home = () => {
       </section>
 
       {/* New Arrival Products */}
-          <section className="new-arrivals">
-      <div className="container">
-        <h2>New Arrival Products</h2>
-        <div className="products-grid">
-          {newProducts.map((product) => (
-            <ProductCard 
-              key={product.id} 
-              product={product}
-            />
-          ))}
+      <section className="new-arrivals">
+  <div className="container">
+    <h2 className="section-title">New Arrival Products</h2>
+    <div className="products-grid">
+      {newProducts.map((product, index) => (
+        <div key={product.id} className={`product-item product-item-${index}`}>
+          <div className="product2-image-container">
+            <img src={product.image} alt={product.name} className="product-image" />
+            <div className="hover-overlay">
+              <button className="overlay-button">Quick View</button>
+              <button className="overlay-button">Add to Cart</button>
+            </div>
+          </div>
+          <h3 className="product-name">{product.name}</h3>
+          <p className="product-price">${product.price}</p>
         </div>
-        <Link to="/Shop">
-          <button className="shop-more">SHOP NOW</button>
-        </Link>
-      </div>
-  </section>
+      ))}
+    </div>
+    <button className="shop-now-btn">SHOP NOW</button>
+  </div>
+</section>
 
 
       {/* Vendor List */}
