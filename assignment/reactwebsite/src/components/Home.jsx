@@ -32,9 +32,9 @@ export const popularCategories = [
 ];
 
 export const newProducts = [
-  {id:7,  name: 'All-Pro Smart', price: { from: 18.00, to: 35.00 }, image: smart },
-  { id:8, name: 'Amazon Alexa', price: { from: 45.00, to: 65.00 }, image: alexa },
-  {id:9, name: 'Headset Gamer', price: { from: 32.00, to: 45.00 }, image: headset }
+  {id:1,  name: 'All-Pro Smart', price: { from: 18.00, to: 35.00 }, image: smart },
+  { id:2, name: 'Amazon Alexa', price: { from: 45.00, to: 65.00 }, image: alexa },
+  {id:3, name: 'Headset Gamer', price: { from: 32.00, to: 45.00 }, image: headset }
 ];
 
 const Home = () => {
@@ -118,8 +118,8 @@ const Home = () => {
       <div className="product2-image-container">
         <img src={product.image} alt={product.name} className="product-image" />
         <div className="hover-overlay">
-          <button className="overlay-button">Quick View</button>
-          <button className="overlay-button">Add to Cart</button>
+         <Link to ="/product/:id"> <button className="overlay-button">Quick View</button></Link>
+         <Link to =""><button className="overlay-button">Add to Cart</button></Link>
         </div>
       </div>
       <h3 className="product-name">{product.name}</h3>
