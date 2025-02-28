@@ -22,7 +22,7 @@ const Navbar = () => {
   return (
     <header className="header">
       <div className="top-navbar">
-        <div className="container">
+        <div className="container2">
           <Link to="/" className="logo">Botiga</Link>
           <div className="search-bar">
             <div className="category-dropdown">
