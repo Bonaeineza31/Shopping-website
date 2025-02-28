@@ -138,7 +138,7 @@
   padding: 0 1rem;
 }
 
-.products-grid {
+.product2-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
@@ -159,14 +159,9 @@
 .shop-now-btn:hover {
   background: #333;
 }
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin: 2rem 0;
-}
 
-.product-image-container {
+
+.product2-image-container {
   position: relative;
   overflow: hidden;
 }
@@ -187,7 +182,7 @@
   transition: opacity 0.3s ease;
 }
 
-.product-image-container:hover .hover-overlay {
+.product2-image-container:hover .hover-overlay {
   opacity: 1;
 }
 

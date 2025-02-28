@@ -4,13 +4,13 @@
   }
   
   .container {
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 0 1rem;
   }
   
   .top-navbar {
-    padding: 1rem 0;
+    padding: 0.2rem 0;
     background: white;
   }
   
@@ -19,6 +19,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
+    padding: 0.2rem;
   }
   
   .logo {

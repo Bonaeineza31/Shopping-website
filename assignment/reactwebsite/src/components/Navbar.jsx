@@ -76,6 +76,7 @@ const Navbar = () => {
             <li><Link to="/HomeProduct">Products</Link></li>
             <li><Link to="/blog">Blog</Link></li>
             <li><Link to="/Contact">Contact</Link></li>
+            <li><Link to="/Dashboard">Dashboard</Link></li>
           </ul>
           <div className="contact-number">📞 800-123-4567</div>
         </div>
